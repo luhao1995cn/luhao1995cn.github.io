@@ -8,7 +8,7 @@ import { capabilities } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Research",
-  description: "Research themes spanning VO₂ thin films, strain engineering, functional oxides, smart windows, MEMS, infrared detectors and laser microfabrication.",
+  description: "Research themes spanning VO₂ thin films, functional oxides, thin-film battery anodes, all-solid-state batteries, MEMS, infrared detectors and laser microfabrication.",
   alternates: { canonical: "/research/" }
 };
 
@@ -17,8 +17,8 @@ export default function ResearchPage() {
     <>
       <PageHeader
         eyebrow="Research"
-        title="Phase-transition materials, resolved from film to function."
-        intro="The research program centers on VO₂ and related functional oxides: how deposition, composition, interfaces and strain govern a transition—and how that behavior carries into optical, electrical and microscale device concepts."
+        title="Functional thin films, resolved from structure to application."
+        intro="The research program connects VO₂ and related functional oxides with complementary thin-film energy-storage systems: how deposition, composition and interfaces govern material response—and how that behavior carries into optical, electrical, battery and microscale device concepts."
       />
 
       <section className="section section-rule shell">

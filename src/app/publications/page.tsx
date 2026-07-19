@@ -9,7 +9,7 @@ import { journalArticles, patents } from "@/data/publications";
 
 export const metadata: Metadata = {
   title: "Publications",
-  description: "Journal articles, patents and conference contributions by Dr. Lu Hao in functional oxides, VO₂ thin films and related materials physics.",
+  description: "Journal articles, meeting abstracts, patents and conference contributions by Dr. Lu Hao in functional oxides, thin-film battery anodes and related materials physics.",
   alternates: { canonical: "/publications/" }
 };
 
@@ -19,15 +19,15 @@ export default function PublicationsPage() {
       <PageHeader
         eyebrow="Publications"
         title="Research outputs, organized and source-checked."
-        intro="Journal metadata and DOI links have been reconciled against publisher records where available. Patent and conference entries remain faithful to the original site and are clearly separated."
+        intro="Publication metadata and DOI links have been reconciled against the public ORCID record and publisher registries where available. Meeting abstracts are explicitly labeled; patent and conference entries remain clearly separated."
       />
 
       <section className="section section-rule shell">
         <Reveal>
           <SectionHeading
-            eyebrow={`${journalArticles.length} journal records`}
-            title="Journal articles"
-            description="Hao Lu is highlighted in each author line. One legacy record remains visible without its invalid DOI while full bibliographic details are confirmed."
+            eyebrow={`${journalArticles.length} publication records`}
+            title="Journal articles and meeting abstracts"
+            description="The public ORCID record currently contributes eight DOI-linked works, including a 2025 all-solid-state-battery meeting abstract. Additional legacy records remain visible with their verification status stated."
           />
         </Reveal>
         <div className="publication-list">

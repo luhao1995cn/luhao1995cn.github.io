@@ -13,28 +13,17 @@ export const journalArticles: JournalArticle[] = [
     featured: true
   },
   {
-    id: "apl-2023-strain",
-    year: 2023,
+    id: "ecs-2025-sinx-anodes",
+    year: 2025,
     authors:
-      "Hao Lu, Lei Li, Zhiwu Tang, Maji Xu, Yonghui Zheng, Martin Becker, Yinmei Lu, Mingkai Li, Pai Li, Zaoli Zhang, Peter J. Klar, Yunbin He",
+      "Federico Rossi, Burak Aktekin, Hao Lu, Martin Becker, Moritz Loewenich, Atharva Harshawardhan Ladole, Marvin Kraft, Hartmut Wiggers, Wolfgang Zeier, Jürgen Janek",
     title:
-      "Correlation of metal-to-insulator transition and strain state of VO₂ thin films on TiO₂ (110) substrates",
-    journal: "Applied Physics Letters",
-    details: "123, 042103",
-    doi: "https://doi.org/10.1063/5.0152809",
-    featured: true
-  },
-  {
-    id: "apl-2020-ruvo2",
-    year: 2020,
-    authors:
-      "Hao Lu, Lufeng Chen, Ruiqi Cao, Xin Tao, Xinru Wang, Mingkai Li, Pai Li, Yinmei Lu, Peter J. Klar, Yunbin He",
-    title:
-      "RuₓV₁₋ₓO₂ alloy epitaxial films: Lowered insulator-metal transition temperature and retained modulation capacity",
-    journal: "Applied Physics Letters",
-    details: "116, 192103",
-    doi: "https://doi.org/10.1063/5.0005426",
-    featured: true
+      "Silicon Nitrides as Promising Anode Materials for All-Solid-State Batteries: Enhancing Stability and Performance",
+    journal: "ECS Meeting Abstracts",
+    details: "MA2025-01(3), 331–331 · Meeting abstract",
+    doi: "https://doi.org/10.1149/MA2025-013331mtgabs",
+    verificationNote:
+      "Public ORCID record; classified by The Electrochemical Society as a meeting abstract."
   },
   {
     id: "jrs-2024-raman",
@@ -46,6 +35,18 @@ export const journalArticles: JournalArticle[] = [
     journal: "Journal of Raman Spectroscopy",
     details: "55(8), 923–938",
     doi: "https://doi.org/10.1002/jrs.6684",
+    featured: true
+  },
+  {
+    id: "apl-2023-strain",
+    year: 2023,
+    authors:
+      "Hao Lu, Lei Li, Zhiwu Tang, Maji Xu, Yonghui Zheng, Martin Becker, Yinmei Lu, Mingkai Li, Pai Li, Zaoli Zhang, Peter J. Klar, Yunbin He",
+    title:
+      "Correlation of metal-to-insulator transition and strain state of VO₂ thin films on TiO₂ (110) substrates",
+    journal: "Applied Physics Letters",
+    details: "123, 042103",
+    doi: "https://doi.org/10.1063/5.0152809",
     featured: true
   },
   {
@@ -69,6 +70,27 @@ export const journalArticles: JournalArticle[] = [
     doi: "https://doi.org/10.1063/5.0044516"
   },
   {
+    id: "apl-2020-ruvo2",
+    year: 2020,
+    authors:
+      "Hao Lu, Lufeng Chen, Ruiqi Cao, Xin Tao, Xinru Wang, Mingkai Li, Pai Li, Yinmei Lu, Peter J. Klar, Yunbin He",
+    title:
+      "RuₓV₁₋ₓO₂ alloy epitaxial films: Lowered insulator-metal transition temperature and retained modulation capacity",
+    journal: "Applied Physics Letters",
+    details: "116, 192103",
+    doi: "https://doi.org/10.1063/5.0005426",
+    featured: true
+  },
+  {
+    id: "ruvo2-2020-pressure",
+    year: 2020,
+    authors: "Ruiqi Cao, Hao Lu, Xin Tao, et al.",
+    title:
+      "Effect of deposition oxygen pressure on the structure and MIT characteristics of RuVO₂ alloy thin films",
+    details: "Repository record; full bibliographic details need confirmation",
+    verificationNote: "The DOI previously shown on this site does not resolve and has been withheld."
+  },
+  {
     id: "ass-2019-zncr2o4",
     year: 2019,
     authors:
@@ -88,15 +110,6 @@ export const journalArticles: JournalArticle[] = [
     journal: "Material Sciences",
     details: "8(5), 573–581",
     doi: "https://doi.org/10.12677/MS.2018.85067"
-  },
-  {
-    id: "ruvo2-2020-pressure",
-    year: 2020,
-    authors: "Ruiqi Cao, Hao Lu, Xin Tao, et al.",
-    title:
-      "Effect of deposition oxygen pressure on the structure and MIT characteristics of RuVO₂ alloy thin films",
-    details: "Repository record; full bibliographic details need confirmation",
-    verificationNote: "The DOI previously shown on this site does not resolve and has been withheld."
   }
 ];
 

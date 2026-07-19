@@ -6,7 +6,7 @@ import { siteConfig, socialLinks } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Dr. Lu Hao about functional oxide thin films, phase-transition materials, MEMS and infrared sensing research.",
+  description: "Contact Dr. Lu Hao about functional oxide thin films, battery anodes, phase-transition materials, MEMS and infrared sensing research.",
   alternates: { canonical: "/contact/" }
 };
 
@@ -16,7 +16,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="Start with a precise research question."
-        intro="For research conversations around functional oxides, VO₂ thin films, phase-transition devices, MEMS, infrared sensing or laser microfabrication, email is the most direct route."
+        intro="For research conversations around functional oxides, VO₂ thin films, thin-film battery anodes, phase-transition devices, MEMS, infrared sensing or laser microfabrication, email is the most direct route."
       />
 
       <section className="section section-rule shell contact-grid">

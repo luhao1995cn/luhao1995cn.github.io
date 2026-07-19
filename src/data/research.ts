@@ -61,10 +61,10 @@ export const currentFocus: FocusItem[] = [
       "Linking programmed scan paths and exposure conditions to reproducible microscale material response."
   },
   {
-    label: "Transition → thermal function",
-    title: "Localized reversible thermal buffering",
+    label: "Interface → cycling",
+    title: "Thin-film and silicon-nitride anodes for solid-state batteries",
     description:
-      "Assessing VO₂ as a microfabrication-compatible element for transient hotspot management."
+      "Connecting controlled model films and SiNₓ-based anode concepts with interphase formation, capacity retention and cycling stability."
   }
 ];
 
@@ -73,6 +73,7 @@ export const broaderInterests = [
   "Two-dimensional materials and heterostructures",
   "Electronic correlations and metal–insulator transitions",
   "Bandgap engineering and optical/electronic property tuning",
+  "Thin-film and silicon-nitride anodes for lithium-ion and all-solid-state batteries",
   "Brain–computer interface concepts"
 ];
 
@@ -90,6 +91,6 @@ export const researchApproach = [
   {
     step: "03",
     title: "Translate",
-    body: "Evaluate how material-level behavior carries into coatings, thermistors and microscale devices."
+    body: "Evaluate how material-level behavior carries into coatings, thermistors, battery anodes and microscale devices."
   }
 ];

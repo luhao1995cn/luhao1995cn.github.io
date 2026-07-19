@@ -6,9 +6,9 @@ export const siteConfig = {
   role: "Postdoctoral researcher · Condensed-matter physicist",
   title: "Dr. Lu Hao — Functional Oxide Thin Films & Devices",
   description:
-    "Research on VO₂ and correlated oxides, functional thin films, metal–insulator transitions, structure–property relations, MEMS and infrared sensing concepts.",
+    "Research on VO₂ and correlated oxides, functional thin films, metal–insulator transitions, thin-film battery anodes, MEMS and infrared sensing concepts.",
   shortBio:
-    "I study how strain, interfaces and composition shape phase transitions in functional oxide thin films—and how those transitions can be translated into sensing, energy and microdevice concepts.",
+    "I study how interfaces, composition and structure shape functional thin films—and how those relationships can be translated into sensing, energy-storage and microdevice concepts.",
   location: "Giessen, Germany",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://luhao1995cn.github.io",
   email: "hao.lu@uni-giessen.de",
@@ -44,6 +44,8 @@ export const researchKeywords = [
   "Functional oxides",
   "Phase-transition materials",
   "Strain engineering",
+  "Thin-film battery anodes",
+  "All-solid-state batteries",
   "Thin-film deposition",
   "MEMS",
   "Infrared detectors",
