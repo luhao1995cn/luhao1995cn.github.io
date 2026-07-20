@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { cache } from "react";
 import matter from "gray-matter";
 import { marked } from "marked";
+import sanitizeHtml from "sanitize-html";
 import { insights } from "@/data/insights";
 import { siteConfig } from "@/data/site";
 import type { InsightMeta } from "@/types/content";
@@ -130,9 +131,50 @@ async function renderMarkdown(source: string) {
     breaks: false
   });
 
-  return secureNewWindowLinks(
+  const enhanced = secureNewWindowLinks(
     addProgressiveImageAttributes(protectedMath.restore(parsed))
   );
+
+  return sanitizeHtml(enhanced, {
+    allowedTags: [...sanitizeHtml.defaults.allowedTags, "img"],
+    allowedAttributes: {
+      "*": ["class", "style"],
+      a: ["href", "name", "target", "rel"],
+      img: ["src", "alt", "width", "height", "loading", "decoding"]
+    },
+    allowedSchemes: ["http", "https", "mailto"],
+    allowProtocolRelative: false,
+    allowedStyles: {
+      "*": {
+        display: [/^(?:grid|flex|block|inline|inline-block)$/],
+        position: [/^(?:relative|absolute|static)$/],
+        inset: [/^[\d.% -]+$/],
+        width: [/^[\d.%a-z -]+$/],
+        height: [/^[\d.%a-z -]+$/],
+        "max-width": [/^[\d.%a-z -]+$/],
+        margin: [/^[\d.%a-z -]+$/],
+        "margin-top": [/^[\d.%a-z -]+$/],
+        "margin-bottom": [/^[\d.%a-z -]+$/],
+        padding: [/^[\d.%a-z -]+$/],
+        gap: [/^[\d.%a-z -]+$/],
+        "grid-template-columns": [/^[\d.%a-z(), -]+$/],
+        "flex-direction": [/^(?:row|column)$/],
+        "justify-content": [/^(?:start|center|end|space-between)$/],
+        overflow: [/^(?:hidden|auto|visible)$/],
+        "object-fit": [/^(?:cover|contain)$/],
+        opacity: [/^(?:0(?:\.\d+)?|1(?:\.0+)?)$/],
+        color: [/^(?:#[\da-fA-F]{3,8}|[a-zA-Z]+)$/],
+        background: [/^[\d.%#(),a-zA-Z -]+$/],
+        "border-radius": [/^[\d.%a-z -]+$/],
+        "box-shadow": [/^[\d.%#(),a-zA-Z -]+$/],
+        "font-size": [/^[\d.%a-z -]+$/],
+        "font-style": [/^(?:normal|italic)$/],
+        "font-weight": [/^[1-9]00$/],
+        "line-height": [/^[\d.]+$/],
+        "text-align": [/^(?:left|center|right)$/]
+      }
+    }
+  });
 }
 
 export function getInsightMeta(slug: string) {

@@ -7,7 +7,7 @@ export const researchThemes: ResearchTheme[] = [
     title: "Strain-engineered phase transitions",
     description:
       "Examining how epitaxy and strain state correlate with the metal–insulator transition in VO₂ thin films on rutile TiO₂ substrates.",
-    image: "/assets/research/vo2-tio2-strain.webp",
+    image: "/assets/research/vo2-tio2-strain-640.webp",
     imageAlt: "Diagram of strain engineering in VO2 thin-film structures",
     tags: ["VO₂", "Epitaxy", "Metal–insulator transition"],
     href: "/publications/#apl-2023-strain"
@@ -18,7 +18,7 @@ export const researchThemes: ResearchTheme[] = [
     title: "Interfaces for smart-window coatings",
     description:
       "Developing and evaluating buffer-layer strategies that connect VO₂ phase-transition performance with scalable smart-window structures.",
-    image: "/assets/research/smart-windows.webp",
+    image: "/assets/research/smart-windows-720.webp",
     imageAlt: "Scientific diagram of a VO2 smart-window thin-film stack",
     tags: ["Smart windows", "Buffer layers", "Functional coatings"],
     href: "/publications/#semsc-2026-buffer"
@@ -29,7 +29,7 @@ export const researchThemes: ResearchTheme[] = [
     title: "Phase-transition materials for infrared sensing",
     description:
       "Connecting VO₂ and Ti–V–O thin-film physics with thermistor response, MEMS architectures and uncooled infrared detector concepts.",
-    image: "/assets/research/infrared-workshop.webp",
+    image: "/assets/research/infrared-workshop-720.webp",
     imageAlt: "Lu Hao presenting research on uncooled infrared detectors and Ti-V-O thermistor layers",
     tags: ["MEMS", "TCR", "Infrared detectors"],
     href: "/insights/why-enhance-tcr/"
@@ -40,10 +40,21 @@ export const researchThemes: ResearchTheme[] = [
     title: "Programmable laser microfabrication",
     description:
       "Using NanoScript-defined trajectories and process parameters to study controlled laser–material interaction and microscale structure formation.",
-    image: "/assets/research/laser-microstructure.webp",
+    image: "/assets/research/laser-microstructure-720.webp",
     imageAlt: "Laser-written microscale structure viewed through a microscope",
     tags: ["Laser direct writing", "NanoScript", "Microstructures"],
     href: "/insights/laser-direct-writing-with-nanoscript/"
+  },
+  {
+    id: "battery-anodes",
+    index: "05",
+    title: "Thin-film anodes for solid-state batteries",
+    description:
+      "Using controlled model films and silicon-nitride anode concepts to examine how composition, interfaces and cycling conditions shape electrochemical stability.",
+    image: "/assets/research/battery-thin-film-anode.svg",
+    imageAlt: "Schematic of a layered thin-film solid-state battery with a silicon-nitride anode",
+    tags: ["Thin-film anodes", "Silicon nitride", "All-solid-state batteries"],
+    href: "/publications/#ecs-2025-sinx-anodes"
   }
 ];
 

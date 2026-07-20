@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "@fontsource-variable/manrope/wght.css";
-@import "@fontsource-variable/jetbrains-mono/wght.css";
 @import "katex/dist/katex.min.css";
 
 :root {
@@ -42,7 +40,7 @@ body {
     radial-gradient(circle at 8% 2%, rgba(65, 118, 111, 0.16), transparent 28rem),
     radial-gradient(circle at 92% 12%, rgba(54, 82, 135, 0.12), transparent 30rem),
     var(--background);
-  font-family: "Manrope Variable", Manrope, ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   font-feature-settings: "ss02", "ss03", "cv01";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -89,12 +87,40 @@ code,
 pre,
 .eyebrow,
 .mono {
-  font-family: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+  font-family: var(--font-mono), ui-monospace, monospace;
 }
 
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.reveal {
+  animation: reveal-in 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--reveal-delay, 0s);
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .skip-link {
@@ -223,6 +249,14 @@ pre,
   color: var(--ink);
 }
 
+.desktop-nav a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.desktop-nav a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
 .desktop-nav a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
@@ -270,6 +304,19 @@ pre,
   padding: 34px 24px 42px;
   border-top: 1px solid var(--line);
   background: rgba(7, 11, 15, 0.98);
+  animation: mobile-nav-in 240ms ease-out both;
+}
+
+@keyframes mobile-nav-in {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .mobile-nav-panel nav {
@@ -289,7 +336,7 @@ pre,
 
 .mobile-nav-panel nav span {
   color: var(--accent);
-  font: 10px "JetBrains Mono Variable", monospace;
+  font: 10px var(--font-mono), monospace;
   letter-spacing: 0.08em;
 }
 
@@ -433,7 +480,7 @@ pre,
   border-radius: 999px;
   color: #9eaaa7;
   background: rgba(255, 255, 255, 0.018);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -483,7 +530,7 @@ pre,
 
 .hero-keyword-label {
   color: var(--faint);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -556,7 +603,7 @@ pre,
   align-items: center;
   justify-content: space-between;
   color: rgba(255, 255, 255, 0.66);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
   letter-spacing: 0.12em;
 }
 
@@ -597,7 +644,7 @@ pre,
   justify-content: space-between;
   margin-bottom: 8px;
   color: rgba(255, 255, 255, 0.5);
-  font: 8px "JetBrains Mono Variable", monospace;
+  font: 8px var(--font-mono), monospace;
 }
 
 .plot-grid {
@@ -609,17 +656,29 @@ pre,
 .plot-line {
   fill: none;
   stroke-linecap: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
   stroke-width: 3;
+  animation: signal-draw 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
 }
 
 .plot-line-primary {
   stroke: var(--accent);
   filter: drop-shadow(0 0 7px rgba(113, 225, 196, 0.5));
+  animation-delay: 0.2s;
 }
 
 .plot-line-secondary {
   stroke: var(--accent-warm);
   stroke-width: 2;
+  opacity: 0.72;
+  animation-delay: 0.45s;
+}
+
+@keyframes signal-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .signal-label {
@@ -636,7 +695,7 @@ pre,
 
 .signal-label span {
   color: var(--muted);
-  font: 8px "JetBrains Mono Variable", monospace;
+  font: 8px var(--font-mono), monospace;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -677,7 +736,7 @@ pre,
 .signal-profile small {
   margin-bottom: 4px;
   color: var(--accent);
-  font: 8px "JetBrains Mono Variable", monospace;
+  font: 8px var(--font-mono), monospace;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -734,6 +793,18 @@ pre,
   object-fit: cover;
 }
 
+.research-card-battery-anodes {
+  grid-column: 1 / -1;
+}
+
+.research-card-battery-anodes .research-card-media {
+  aspect-ratio: 2.45;
+}
+
+.research-card-battery-anodes .research-card-media img {
+  object-fit: contain;
+}
+
 .research-card-infrared-sensing .research-card-media img,
 .research-card-laser-writing .research-card-media img {
   filter: saturate(0.68) contrast(1.06) brightness(0.82);
@@ -766,7 +837,7 @@ pre,
 .research-card-index {
   left: 16px;
   color: #bdc8c5;
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
 }
 
 .research-card-arrow {
@@ -833,7 +904,7 @@ a.publication-entry:hover {
 
 .publication-marker span {
   color: var(--accent);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
 }
 
 .publication-copy {
@@ -877,7 +948,7 @@ a.publication-entry:hover {
   justify-content: flex-end;
   gap: 10px;
   color: var(--faint);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
 }
 
 .publication-year svg {
@@ -937,14 +1008,14 @@ a.timeline-item:hover {
 
 .timeline-period {
   color: var(--muted);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
   letter-spacing: 0.09em;
   text-transform: uppercase;
 }
 
 .timeline-copy > span {
   color: var(--accent);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -1014,7 +1085,7 @@ a.timeline-item:hover .timeline-arrow {
   top: 18px;
   right: 20px;
   color: var(--faint);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
 }
 
 .focus-card .eyebrow {
@@ -1086,7 +1157,7 @@ a.timeline-item:hover .timeline-arrow {
 
 .contact-banner-action span {
   color: var(--faint);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1119,7 +1190,7 @@ a.timeline-item:hover .timeline-arrow {
   gap: 20px;
   padding: 14px 4px 0;
   color: var(--faint);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1185,7 +1256,7 @@ a.timeline-item:hover .timeline-arrow {
 .capability-card > span,
 .approach-card > span {
   color: var(--accent);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
 }
 
 .capability-card h3,
@@ -1232,7 +1303,7 @@ a.timeline-item:hover .timeline-arrow {
 
 .interest-item span {
   color: var(--accent);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
 }
 
 .interest-item p {
@@ -1330,13 +1401,13 @@ a.timeline-item:hover .timeline-arrow {
 .patent-card > span {
   float: right;
   color: var(--faint);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
 }
 
 .patent-card .patent-id {
   margin: 88px 0 18px;
   color: var(--accent);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1371,7 +1442,7 @@ a.timeline-item:hover .timeline-arrow {
 
 .conference-row > span {
   color: var(--accent);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
 }
 
 .conference-row h3,
@@ -1444,7 +1515,7 @@ a.timeline-item:hover .timeline-arrow {
   justify-content: space-between;
   gap: 20px;
   color: var(--accent);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1511,7 +1582,7 @@ a.timeline-item:hover .timeline-arrow {
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--faint);
-  font: 8px "JetBrains Mono Variable", monospace;
+  font: 8px var(--font-mono), monospace;
   letter-spacing: 0.04em;
 }
 
@@ -1533,7 +1604,7 @@ a.timeline-item:hover .timeline-arrow {
 .cv-toolbar p {
   margin: 0;
   color: var(--faint);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -1617,7 +1688,7 @@ a.timeline-item:hover .timeline-arrow {
 .cv-section h2 {
   margin: 0 0 24px;
   color: var(--accent);
-  font: 10px "JetBrains Mono Variable", monospace;
+  font: 10px var(--font-mono), monospace;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -1674,7 +1745,7 @@ a.timeline-item:hover .timeline-arrow {
 
 .cv-timeline article > span {
   color: var(--faint);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
 }
 
 .cv-timeline h3,
@@ -1723,7 +1794,7 @@ a.timeline-item:hover .timeline-arrow {
   left: 0;
   color: var(--accent);
   content: counter(cv-publication, decimal-leading-zero);
-  font: 9px "JetBrains Mono Variable", monospace;
+  font: 9px var(--font-mono), monospace;
 }
 
 .cv-publications p,
@@ -1797,7 +1868,7 @@ a.timeline-item:hover .timeline-arrow {
 
 .contact-detail-row span {
   color: var(--faint);
-  font: 8px "JetBrains Mono Variable", monospace;
+  font: 8px var(--font-mono), monospace;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -1833,7 +1904,7 @@ a.timeline-item:hover .timeline-arrow {
 
 .contact-note span {
   color: var(--accent);
-  font: 10px "JetBrains Mono Variable", monospace;
+  font: 10px var(--font-mono), monospace;
 }
 
 .contact-note p {
@@ -2281,6 +2352,14 @@ a.timeline-item:hover .timeline-arrow {
     grid-template-columns: 1fr;
   }
 
+  .research-card-battery-anodes {
+    grid-column: auto;
+  }
+
+  .research-card-battery-anodes .research-card-media {
+    aspect-ratio: 1.18;
+  }
+
   .research-card-media {
     aspect-ratio: 1.18;
   }
@@ -2361,39 +2440,5 @@ a.timeline-item:hover .timeline-arrow {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-}
-
-@media print {
-  :root {
-    --ink: #111;
-    --muted: #444;
-    --line: #ddd;
-    --background: #fff;
-  }
-
-  body {
-    color: #111;
-    background: white;
-  }
-
-  body::before,
-  .site-header,
-  .site-footer,
-  .print-hidden {
-    display: none !important;
-  }
-
-  main {
-    padding: 0 !important;
-  }
-
-  .shell {
-    width: 100%;
-    max-width: none;
-  }
-
-  a {
-    color: inherit !important;
   }
 }

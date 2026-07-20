@@ -1,37 +1,44 @@
-import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
 import { PublicationEntry } from "@/components/publications/publication-entry";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { conferences } from "@/data/experience";
-import { journalArticles, patents } from "@/data/publications";
+import {
+  meetingAbstracts,
+  patents,
+  peerReviewedArticles,
+  unverifiedPublicationRecords
+} from "@/data/publications";
+import { PublicationsJsonLd } from "@/components/seo/publications-json-ld";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Publications",
   description: "Journal articles, meeting abstracts, patents and conference contributions by Dr. Lu Hao in functional oxides, thin-film battery anodes and related materials physics.",
-  alternates: { canonical: "/publications/" }
-};
+  path: "/publications/"
+});
 
 export default function PublicationsPage() {
   return (
     <>
+      <PublicationsJsonLd />
       <PageHeader
         eyebrow="Publications"
-        title="Research outputs, organized and source-checked."
-        intro="Publication metadata and DOI links have been reconciled against the public ORCID record and publisher registries where available. Meeting abstracts are explicitly labeled; patent and conference entries remain clearly separated."
+        title="Research outputs across materials physics and thin-film devices."
+        intro="Peer-reviewed journal articles, meeting abstracts, patents and conference contributions are presented in separate sections for clarity."
       />
 
       <section className="section section-rule shell">
         <Reveal>
           <SectionHeading
-            eyebrow={`${journalArticles.length} publication records`}
-            title="Journal articles and meeting abstracts"
-            description="The public ORCID record currently contributes eight DOI-linked works, including a 2025 all-solid-state-battery meeting abstract. Additional legacy records remain visible with their verification status stated."
+            eyebrow={`${peerReviewedArticles.length} journal articles`}
+            title="Peer-reviewed journal articles"
+            description="Work spanning phase-transition oxides, epitaxial thin films, smart-window coatings and related functional materials."
           />
         </Reveal>
         <div className="publication-list">
-          {journalArticles.map((article, index) => (
+          {peerReviewedArticles.map((article, index) => (
             <Reveal key={article.id} delay={Math.min(index * 0.035, 0.2)}>
               <PublicationEntry article={article} />
             </Reveal>
@@ -39,13 +46,47 @@ export default function PublicationsPage() {
         </div>
       </section>
 
+      <section className="section section-rule shell">
+        <Reveal>
+          <SectionHeading
+            eyebrow={`${meetingAbstracts.length} meeting abstract`}
+            title="Meeting abstracts"
+            description="Conference abstracts are listed separately from peer-reviewed journal articles."
+          />
+        </Reveal>
+        <div className="publication-list">
+          {meetingAbstracts.map((article, index) => (
+            <Reveal key={article.id} delay={Math.min(index * 0.035, 0.2)}>
+              <PublicationEntry article={article} />
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {unverifiedPublicationRecords.length ? (
+        <section className="section section-rule shell">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Bibliographic follow-up"
+              title="Additional record"
+              description="This item is retained outside the formal publication list until complete journal metadata can be confirmed."
+            />
+          </Reveal>
+          <div className="publication-list">
+            {unverifiedPublicationRecords.map((article) => (
+              <PublicationEntry key={article.id} article={article} />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="section patent-section">
         <div className="shell">
           <Reveal>
             <SectionHeading
-              eyebrow={`${patents.length} repository records`}
+              eyebrow={`${patents.length} records`}
               title="Patents"
-              description="These identifiers and author lists are preserved verbatim in substance from the previous site. Official patent documents were not present in the repository and should be supplied for a final legal-record check."
+              description="Patent and application records related to functional films, smart glass, spectroscopy and infrared detector structures."
             />
           </Reveal>
           <div className="patent-grid">
@@ -68,7 +109,7 @@ export default function PublicationsPage() {
           <SectionHeading
             eyebrow="Academic exchange"
             title="Conference contributions"
-            description="The supplied CV lists ten oral/poster contributions. Its two DPG entries labeled 2024 are reproduced as supplied, without inferring missing presentation titles."
+            description="Selected oral and poster contributions at international materials, optics and physics meetings."
           />
         </Reveal>
         <div className="conference-list">

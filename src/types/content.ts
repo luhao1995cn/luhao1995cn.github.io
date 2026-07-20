@@ -40,6 +40,7 @@ export type ResearchProject = {
 
 export type JournalArticle = {
   id: string;
+  kind: "journal-article" | "meeting-abstract" | "unverified-record";
   year: number;
   authors: string;
   title: string;
@@ -75,4 +76,8 @@ export type InsightMeta = {
   excerpt: string;
   image?: string;
   imageAlt?: string;
+  references: Array<{
+    citation: string;
+    href: string;
+  }>;
 };

@@ -1,24 +1,17 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { PageHeader } from "@/components/ui/page-header";
 import { insights } from "@/data/insights";
 import { withBasePath } from "@/lib/paths";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Research notes",
   description:
     "Research notes by Lu Hao on functional oxide thin films, phase transitions, infrared sensing and microfabrication.",
-  alternates: { canonical: "/insights/" },
-  openGraph: {
-    title: "Research notes — Lu Hao",
-    description:
-      "Research notes on functional oxide thin films, phase transitions, infrared sensing and microfabrication.",
-    url: "/insights/",
-    type: "website"
-  }
-};
+  path: "/insights/"
+});
 
 export default function InsightsPage() {
   return (

@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import { ExperienceTimeline } from "@/components/experience/experience-timeline";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { conferences, education, experience, researchProjects } from "@/data/experience";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Experience",
   description:
     "Education, postdoctoral and doctoral research, MEMS industry experience, research projects and conference contributions for Dr. Lu Hao.",
-  alternates: { canonical: "/experience/" }
-};
+  path: "/experience/"
+});
 
 export default function ExperiencePage() {
   return (
@@ -26,7 +26,7 @@ export default function ExperiencePage() {
           <SectionHeading
             eyebrow="Career"
             title="Research and engineering appointments"
-            description="Dates, roles and institutions are taken from the owner-supplied CV. Private contact and biographical fields from that document are not published."
+            description="Academic and industrial appointments spanning functional materials, thin-film processes, MEMS and device-oriented research."
           />
         </Reveal>
         <Reveal>
@@ -38,9 +38,9 @@ export default function ExperiencePage() {
         <div className="shell">
           <Reveal>
             <SectionHeading
-              eyebrow="Education"
-              title="From chemistry and materials science to condensed-matter physics."
-              description="Degree history and thesis topics, presented without supervisor contact details or other third-party personal information."
+            eyebrow="Education"
+            title="From chemistry and materials science to condensed-matter physics."
+            description="Degree history and thesis topics across chemistry, materials science and experimental condensed-matter physics."
             />
           </Reveal>
           <Reveal>
@@ -54,7 +54,7 @@ export default function ExperiencePage() {
           <SectionHeading
             eyebrow="Research programmes"
             title="The project record behind the timeline."
-            description="Academic and technical work from the supplied CV, organized by the scientific question and experimental contribution."
+            description="Academic and technical work organized by the scientific question, experimental contribution and device context."
           />
         </Reveal>
         <div className="project-evidence-grid">
@@ -91,7 +91,7 @@ export default function ExperiencePage() {
           <Reveal delay={0.08}>
             <div className="experience-prose">
               <p>
-                The CV records hands-on work with RF sputtering, pulsed laser deposition, ion-beam sputtering and industrial PVD/CVD process integration, together with photolithography, lift-off, MEMS fabrication and direct laser writing.
+                My hands-on work includes RF sputtering, pulsed laser deposition, ion-beam sputtering and industrial PVD/CVD process integration, together with photolithography, lift-off, MEMS fabrication and direct laser writing.
               </p>
               <p>
                 The characterization toolkit includes XRD, Raman, XPS, optical transmittance, AFM, SEM, spectroscopic ellipsometry and Hall measurements—used to connect composition and structure with optical, electrical and device-level behavior.
@@ -106,7 +106,7 @@ export default function ExperiencePage() {
           <SectionHeading
             eyebrow="Presentations"
             title="Academic exchange across China and Germany."
-            description="Ten oral or poster contributions listed in the supplied CV, reproduced without adding unverified presentation titles."
+            description="Oral and poster contributions at materials, optics and physics meetings in China and Germany."
           />
         </Reveal>
         <div className="conference-list conference-list-compact">

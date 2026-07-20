@@ -44,10 +44,20 @@ let checked = 0;
 
 for (const htmlFile of htmlFiles) {
   const html = await readFile(htmlFile, "utf8");
+  const relativeHtml = path.relative(output, htmlFile);
   const references = [...html.matchAll(/(?:href|src)="([^"]+)"/g)].map((match) => match[1]);
 
   if (html.includes('/assets/assets/') || html.includes('/assets/img/')) {
-    failures.push(`${path.relative(output, htmlFile)} still contains a legacy asset path`);
+    failures.push(`${relativeHtml} still contains a legacy asset path`);
+  }
+
+  if (!relativeHtml.startsWith("posts/") && relativeHtml !== "404.html") {
+    if (!/<link rel="canonical" href="https:\/\/[^" ]+"/.test(html)) {
+      failures.push(`${relativeHtml} is missing an absolute canonical URL`);
+    }
+    for (const property of ["og:title", "og:description", "og:url"]) {
+      if (!html.includes(`property="${property}"`)) failures.push(`${relativeHtml} is missing ${property}`);
+    }
   }
 
   for (const reference of references) {
@@ -85,6 +95,10 @@ const expected = [
   "robots.txt",
   "404.html"
 ];
+
+for (const removedRoute of ["tabs/research/index.html", "tabs/publications/index.html", "tabs/contact/index.html"]) {
+  if (await exists(path.join(output, removedRoute))) failures.push(`Duplicate route still exported: ${removedRoute}`);
+}
 
 for (const expectedFile of expected) {
   if (!(await exists(path.join(output, expectedFile)))) failures.push(`Missing ${expectedFile}`);

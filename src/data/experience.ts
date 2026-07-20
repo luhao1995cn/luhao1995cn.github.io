@@ -16,7 +16,7 @@ export const experience: ExperienceItem[] = [
     organization:
       "Institute of Experimental Physics I · Center for Materials Research (ZfM/LaMa) · Justus Liebig University Giessen",
     description:
-      "Investigated strain, interfaces and buffer-layer design in VO₂ thin-film systems, connecting phase-transition mechanisms with thermochromic smart-window performance.",
+      "Investigated strain, interfaces and buffer-layer design in VO₂ thin-film systems and contributed to controlled thin-film anode studies, connecting material mechanisms with smart-window and solid-state-battery questions.",
     href: "https://doi.org/10.22029/jlupub-20608"
   },
   {
@@ -113,15 +113,16 @@ export const researchProjects: ResearchProject[] = [
   },
   {
     period: "2021–2025",
-    title: "Model thin-film anodes for lithium-ion batteries",
+    title: "Thin-film and silicon-nitride anodes for solid-state batteries",
     organization: "Justus Liebig University Giessen · Jürgen Janek research group collaboration",
     summary:
-      "Well-controlled thin-film model systems for systematic investigation of novel lithium-ion-battery anode materials.",
+      "Well-controlled thin-film model systems and silicon-nitride anode concepts for lithium-ion and all-solid-state-battery research.",
     highlights: [
-      "Established reproducible fabrication routes.",
-      "Investigated composition-, structure- and thickness-dependent behavior."
+      "Established reproducible fabrication routes for model anode layers.",
+      "Investigated composition-, structure-, thickness- and interface-dependent behavior.",
+      "Contributed to work on SiNₓ-based anodes reported in an ECS meeting abstract."
     ],
-    tags: ["Thin-film anodes", "Lithium-ion batteries", "Model systems"]
+    tags: ["Thin-film anodes", "SiNₓ", "All-solid-state batteries"]
   },
   {
     period: "2020–2021",

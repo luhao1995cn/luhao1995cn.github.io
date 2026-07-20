@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" role="img" aria-labelledby="title description">
+  <title id="title">Thin-film solid-state battery schematic</title>
+  <desc id="description">An original schematic showing a silicon nitride anode, solid electrolyte and cathode as controlled thin-film layers.</desc>
+  <rect width="1200" height="480" fill="#0b1116"/>
+  <g opacity=".18" stroke="#8ecac2" stroke-width="1">
+    <path d="M0 80h1200M0 160h1200M0 240h1200M0 320h1200M0 400h1200"/>
+    <path d="M120 0v480M240 0v480M360 0v480M480 0v480M600 0v480M720 0v480M840 0v480M960 0v480M1080 0v480"/>
+  </g>
+  <g transform="translate(218 98) skewX(-18)">
+    <rect x="0" y="176" width="760" height="72" rx="8" fill="#25313a" stroke="#6f7d87"/>
+    <rect x="0" y="118" width="760" height="54" rx="8" fill="#316c69" stroke="#8ecac2"/>
+    <rect x="0" y="62" width="760" height="52" rx="8" fill="#665c3e" stroke="#d7ba72"/>
+    <rect x="0" y="0" width="760" height="58" rx="8" fill="#354a70" stroke="#7898cf"/>
+  </g>
+  <g fill="#e8efed" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="1.2">
+    <text x="940" y="107">SiNₓ ANODE</text>
+    <text x="960" y="170">SOLID ELECTROLYTE</text>
+    <text x="980" y="228">CATHODE</text>
+    <text x="1000" y="296">CURRENT COLLECTOR</text>
+  </g>
+  <g fill="none" stroke="#b9c5c2" stroke-width="1.5">
+    <path d="M895 100h34"/>
+    <path d="M914 163h34"/>
+    <path d="M934 221h34"/>
+    <path d="M954 289h34"/>
+  </g>
+  <g fill="#9ed5cc">
+    <circle cx="390" cy="132" r="7"/><circle cx="460" cy="132" r="7"/><circle cx="530" cy="132" r="7"/><circle cx="600" cy="132" r="7"/><circle cx="670" cy="132" r="7"/>
+  </g>
+  <g stroke="#9ed5cc" stroke-width="2" fill="none">
+    <path d="M390 126V99m0 0-8 10m8-10 8 10"/>
+    <path d="M460 126V99m0 0-8 10m8-10 8 10"/>
+    <path d="M530 126V99m0 0-8 10m8-10 8 10"/>
+    <path d="M600 126V99m0 0-8 10m8-10 8 10"/>
+    <path d="M670 126V99m0 0-8 10m8-10 8 10"/>
+  </g>
+  <text x="56" y="430" fill="#8ba09c" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2">CONTROLLED LAYERS · INTERFACES · CYCLING STABILITY</text>
+</svg>

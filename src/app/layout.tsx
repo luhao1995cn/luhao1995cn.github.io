@@ -1,8 +1,30 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "@/app/globals.css";
+import "@/app/print.css";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
 import { researchKeywords, siteConfig } from "@/data/site";
+
+const manrope = localFont({
+  src: "../../node_modules/@fontsource-variable/manrope/files/manrope-latin-wght-normal.woff2",
+  variable: "--font-sans",
+  weight: "200 800",
+  display: "swap",
+  preload: true,
+  fallback: ["Arial"],
+  adjustFontFallback: "Arial"
+});
+
+const jetBrainsMono = localFont({
+  src: "../../node_modules/@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2",
+  variable: "--font-mono",
+  weight: "100 800",
+  display: "swap",
+  preload: true,
+  fallback: ["Courier New"],
+  adjustFontFallback: false
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -50,7 +72,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${manrope.variable} ${jetBrainsMono.variable}`}>
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>

@@ -1,0 +1,251 @@
+@page {
+  size: A4;
+  margin: 13mm 13mm 15mm;
+}
+
+@media print {
+  :root {
+    --ink: #111820;
+    --muted: #39434d;
+    --faint: #5f6972;
+    --line: #cfd5da;
+    --background: #fff;
+    --accent: #135f62;
+  }
+
+  html,
+  body {
+    width: 100%;
+    min-width: 0;
+    color: #111820 !important;
+    background: #fff !important;
+    font-size: 9pt;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  body::before,
+  .skip-link,
+  .site-header,
+  .site-footer,
+  .print-hidden {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  .shell,
+  .cv-page {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .cv-header {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 66mm !important;
+    gap: 10mm !important;
+    align-items: end !important;
+    padding: 0 0 5mm !important;
+    border-bottom: 1.5pt solid #111820 !important;
+  }
+
+  .cv-header .eyebrow {
+    margin-bottom: 2mm;
+    color: #135f62 !important;
+    font-size: 7pt !important;
+  }
+
+  .cv-header h1 {
+    margin: 0 !important;
+    color: #111820 !important;
+    font-size: 34pt !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.045em !important;
+  }
+
+  .cv-header > div > p:last-child {
+    margin: 3mm 0 0 !important;
+    color: #39434d !important;
+    font-size: 9pt !important;
+  }
+
+  .cv-header address {
+    gap: 1.5mm !important;
+    color: #39434d !important;
+    font-size: 7pt !important;
+  }
+
+  .cv-header address a,
+  .cv-header address span {
+    gap: 1.5mm !important;
+    color: #39434d !important;
+  }
+
+  .cv-header address svg {
+    width: 3mm !important;
+    height: 3mm !important;
+  }
+
+  .cv-layout {
+    display: block !important;
+  }
+
+  .cv-layout > aside {
+    display: grid !important;
+    grid-template-columns: 1fr 1.5fr 0.75fr !important;
+    gap: 6mm !important;
+    margin: 0 !important;
+    padding: 4mm 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0.75pt solid #cfd5da !important;
+  }
+
+  .cv-section {
+    padding: 4mm 0 !important;
+    border-color: #cfd5da !important;
+  }
+
+  .cv-layout > aside .cv-section {
+    padding: 0 !important;
+    border: 0 !important;
+  }
+
+  .cv-section h2 {
+    margin: 0 0 2.5mm !important;
+    color: #135f62 !important;
+    font-size: 7.2pt !important;
+    letter-spacing: 0.1em !important;
+    break-after: avoid-page;
+    page-break-after: avoid;
+  }
+
+  .cv-section h3,
+  .cv-section h4,
+  .cv-section p,
+  .cv-section li,
+  .cv-section strong,
+  .cv-section em,
+  .cv-section a {
+    color: #111820 !important;
+  }
+
+  .cv-section ul {
+    gap: 1.2mm !important;
+    color: #39434d !important;
+    font-size: 7.3pt !important;
+  }
+
+  .cv-section li::before,
+  .cv-publications li::before {
+    color: #135f62 !important;
+  }
+
+  .cv-method-group + .cv-method-group {
+    margin-top: 2.5mm !important;
+  }
+
+  .cv-method-group h3 {
+    margin-bottom: 1mm !important;
+    font-size: 7.6pt !important;
+  }
+
+  .cv-method-group p,
+  .cv-section > p {
+    color: #39434d !important;
+    font-size: 7.2pt !important;
+    line-height: 1.42 !important;
+  }
+
+  .cv-section .cv-profile {
+    max-width: none !important;
+    color: #25313a !important;
+    font-size: 9.4pt !important;
+    line-height: 1.48 !important;
+  }
+
+  .cv-timeline {
+    gap: 3.2mm !important;
+  }
+
+  .cv-timeline article {
+    display: grid !important;
+    grid-template-columns: 29mm minmax(0, 1fr) !important;
+    gap: 5mm !important;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .cv-timeline article > span {
+    color: #5f6972 !important;
+    font-size: 6.7pt !important;
+  }
+
+  .cv-timeline h3 {
+    color: #111820 !important;
+    font-size: 9.2pt !important;
+  }
+
+  .cv-timeline h4 {
+    margin-top: 0.7mm !important;
+    color: #39434d !important;
+    font-size: 7.2pt !important;
+  }
+
+  .cv-timeline p {
+    margin-top: 1.2mm !important;
+    color: #39434d !important;
+    font-size: 7.2pt !important;
+    line-height: 1.42 !important;
+  }
+
+  .cv-section-publications {
+    border-bottom: 0 !important;
+  }
+
+  .cv-publications {
+    gap: 3.5mm !important;
+  }
+
+  .cv-publications li {
+    padding-left: 8mm !important;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  .cv-publications li::before {
+    top: 0.5mm !important;
+    font-size: 6.8pt !important;
+  }
+
+  .cv-publications h3 {
+    margin: 1mm 0 !important;
+    color: #111820 !important;
+    font-size: 8.4pt !important;
+    line-height: 1.32 !important;
+  }
+
+  .cv-publications p {
+    color: #39434d !important;
+    font-size: 6.8pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .cv-publications a {
+    color: #135f62 !important;
+    text-decoration: none !important;
+  }
+
+  .cv-section-abstracts {
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}

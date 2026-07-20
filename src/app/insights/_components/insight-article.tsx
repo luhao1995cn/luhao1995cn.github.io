@@ -22,7 +22,7 @@ export function InsightArticle({ insight }: InsightArticleProps) {
   const canonicalUrl = getInsightAbsoluteUrl(insight.slug);
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
+    "@type": "BlogPosting",
     headline: insight.title,
     description: insight.excerpt,
     datePublished: insight.date,
@@ -34,6 +34,8 @@ export function InsightArticle({ insight }: InsightArticleProps) {
       name: siteConfig.fullName,
       url: siteConfig.url
     },
+    articleSection: insight.category,
+    citation: insight.references.map((reference) => reference.href),
     ...(insight.image ? { image: absoluteAssetUrl(insight.image) } : {})
   };
 
@@ -103,11 +105,29 @@ export function InsightArticle({ insight }: InsightArticleProps) {
             </dl>
           </aside>
 
-          <MathContent
-            html={insight.contentHtml}
-            renderMath={insight.math}
-            className="prose article-prose min-w-0 max-w-[820px] break-words [&_.formula-block]:my-8 [&_.formula-block]:overflow-x-auto [&_.formula-block]:py-2 [&_.post-date]:mb-7 [&_.post-date]:font-mono [&_.post-date]:text-[10px] [&_.post-date]:tracking-[0.15em] [&_.post-date]:text-[var(--faint)] [&_a]:break-words [&_li]:my-2 [&_ol]:list-decimal [&_ol]:pl-6 [&_ul]:list-disc [&_ul]:pl-6"
-          />
+          <div className="min-w-0 max-w-[820px]">
+            <MathContent
+              html={insight.contentHtml}
+              renderMath={insight.math}
+              className="prose article-prose min-w-0 break-words [&_.formula-block]:my-8 [&_.formula-block]:overflow-x-auto [&_.formula-block]:py-2 [&_.post-date]:mb-7 [&_.post-date]:font-mono [&_.post-date]:text-[10px] [&_.post-date]:tracking-[0.15em] [&_.post-date]:text-[var(--faint)] [&_a]:break-words [&_li]:my-2 [&_ol]:list-decimal [&_ol]:pl-6 [&_ul]:list-disc [&_ul]:pl-6"
+            />
+
+            <section className="mt-16 border-t border-[var(--line)] pt-8" aria-labelledby="references-heading">
+              <p className="eyebrow">Sources</p>
+              <h2 id="references-heading" className="mt-3 mb-6 text-2xl font-medium tracking-[-0.035em] text-[var(--ink)]">
+                References
+              </h2>
+              <ol className="m-0 grid list-decimal gap-4 pl-5 text-[13px] leading-6 text-[var(--muted)]">
+                {insight.references.map((reference) => (
+                  <li key={reference.href}>
+                    <a className="text-[var(--ink)] underline decoration-[var(--line-strong)] underline-offset-4 transition-colors hover:text-[var(--accent)]" href={reference.href} target="_blank" rel="noreferrer">
+                      {reference.citation}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          </div>
         </div>
       </div>
 

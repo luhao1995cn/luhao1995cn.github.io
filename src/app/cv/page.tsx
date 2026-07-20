@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import { ExternalLink, Mail, MapPin } from "lucide-react";
 import { PrintButton } from "@/components/cv/print-button";
 import { education, experience } from "@/data/experience";
-import { journalArticles, patents } from "@/data/publications";
+import { meetingAbstracts, patents, peerReviewedArticles } from "@/data/publications";
 import { capabilities, researchKeywords, siteConfig, socialLinks } from "@/data/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "CV",
   description:
-    "A privacy-aware web CV for Dr. Lu Hao, covering education, postdoctoral and doctoral research, MEMS engineering, publications and experimental methods.",
-  alternates: { canonical: "/cv/" }
-};
+    "Academic CV for Dr. Lu Hao, covering education, postdoctoral and doctoral research, MEMS engineering, publications and experimental methods.",
+  path: "/cv/"
+});
 
 function CompactTimeline({ items }: { items: typeof experience }) {
   return (
@@ -29,11 +29,37 @@ function CompactTimeline({ items }: { items: typeof experience }) {
   );
 }
 
+function Authors({ value }: { value: string }) {
+  return value.split(/(Hao Lu)/g).map((part, index) =>
+    part === "Hao Lu" ? <strong key={index}>{part}</strong> : part
+  );
+}
+
+function PublicationList({ articles }: { articles: typeof peerReviewedArticles }) {
+  return (
+    <ol className="cv-publications">
+      {articles.map((article) => (
+        <li key={article.id}>
+          <p><Authors value={article.authors} /></p>
+          <h3>{article.title}</h3>
+          <p>
+            {article.journal ? <em>{article.journal}</em> : null}
+            {article.details ? `, ${article.details}` : ""} ({article.year})
+            {article.doi ? (
+              <> · <a href={article.doi}>DOI</a></>
+            ) : null}
+          </p>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 export default function CVPage() {
   return (
     <section className="cv-page shell">
       <div className="cv-toolbar print-hidden">
-        <p>Owner-supplied academic CV · privacy-filtered for the public web</p>
+        <p>Academic CV · selected professional information</p>
         <PrintButton />
       </div>
 
@@ -54,8 +80,8 @@ export default function CVPage() {
         </address>
       </header>
 
-      <div className="cv-note">
-        This web CV uses the owner-supplied source document but intentionally omits date and place of birth, gender, nationality, street address, telephone number, private email and third-party email addresses. Academic and technical records are retained.
+      <div className="cv-note print-hidden">
+        This public version presents academic and professional information only. Personal contact details are intentionally limited.
       </div>
 
       <div className="cv-layout">
@@ -75,7 +101,7 @@ export default function CVPage() {
           </section>
           <section className="cv-section">
             <h2>Patents</h2>
-            <p>{patents.length} patent/application records are listed on the Publications page with the identifiers supplied in the source CV.</p>
+            <p>{patents.length} patent and application records are listed on the Publications page.</p>
           </section>
         </aside>
 
@@ -92,17 +118,13 @@ export default function CVPage() {
             <h2>Education</h2>
             <CompactTimeline items={education} />
           </section>
-          <section className="cv-section">
+          <section className="cv-section cv-section-publications">
             <h2>Peer-reviewed publications</h2>
-            <ol className="cv-publications">
-              {journalArticles.map((article) => (
-                <li key={article.id}>
-                  <p>{article.authors}</p>
-                  <h3>{article.title}</h3>
-                  <p><em>{article.journal}</em>{article.details ? `, ${article.details}` : ""} ({article.year})</p>
-                </li>
-              ))}
-            </ol>
+            <PublicationList articles={peerReviewedArticles} />
+          </section>
+          <section className="cv-section cv-section-abstracts">
+            <h2>Meeting abstracts</h2>
+            <PublicationList articles={meetingAbstracts} />
           </section>
         </div>
       </div>
