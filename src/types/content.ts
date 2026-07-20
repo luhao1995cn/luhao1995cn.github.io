@@ -20,6 +20,39 @@ export type FocusItem = {
   description: string;
 };
 
+export type ResearchCaseStudy = {
+  slug: string;
+  index: string;
+  eyebrow: string;
+  title: string;
+  summary: string;
+  period: string;
+  organization: string;
+  status: string;
+  image: string;
+  imageAlt: string;
+  tags: string[];
+  question: string;
+  workflow: Array<{
+    step: string;
+    title: string;
+    body: string;
+  }>;
+  contributions: string[];
+  significance: string;
+  evidence: Array<{
+    label: string;
+    title: string;
+    detail: string;
+    href?: string;
+  }>;
+  gallery?: Array<{
+    image: string;
+    alt: string;
+    caption: string;
+  }>;
+};
+
 export type ExperienceItem = {
   period: string;
   type: "Education" | "Research" | "Industry" | "Academic service";

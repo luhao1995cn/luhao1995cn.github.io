@@ -24,7 +24,7 @@ export function SiteFooter() {
       </div>
       <div className="shell footer-bottom">
         <p>© {new Date().getFullYear()} Lu Hao</p>
-        <p>Functional oxides · Thin films · Device physics</p>
+        <p>Thin-film growth · Characterization · Device integration</p>
         <Link href="/contact/">Contact</Link>
       </div>
     </footer>

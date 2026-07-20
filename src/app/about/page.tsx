@@ -10,7 +10,7 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "About",
-  description: "About Dr. Lu Hao, a condensed-matter physicist working on VO₂, functional oxide thin films and device-facing phase-transition research.",
+  description: "About Dr. Lu Hao, a materials physicist working across thin-film growth, structure–property characterization, micro/nanofabrication and device-oriented research.",
   path: "/about/"
 });
 
@@ -19,8 +19,8 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="About"
-        title="A materials physicist focused on transitions that can do useful work."
-        intro="I am a postdoctoral researcher working across condensed-matter physics, functional oxide thin films and device-oriented materials questions, with VO₂ as a central research system."
+        title="A materials physicist working across the thin-film-to-device workflow."
+        intro="I am a postdoctoral researcher connecting thin-film growth, physical-property characterization and micro/nanofabrication with device-oriented materials questions."
       />
 
       <section className="section section-rule shell about-profile">
@@ -40,15 +40,15 @@ export default function AboutPage() {
         </Reveal>
         <Reveal className="about-narrative" delay={0.08}>
           <p className="eyebrow">Research perspective</p>
-          <h2>Structure, transition, function.</h2>
+          <h2>Grow, measure, understand, integrate.</h2>
           <p className="about-lead">
-            The central question is how a material&apos;s structure—and the strain, interfaces and composition around it—reshapes a phase transition.
+            The central question is how processing, composition, interfaces and structure determine material response—and how that understanding can guide a useful device or architecture.
           </p>
           <p>
-            My work connects thin-film growth and characterization with optical, electrical and electrochemical response. It spans VO₂/TiO₂ epitaxy, alloyed and buffered VO₂ systems, smart-window coatings, Raman analysis, MEMS, uncooled infrared detector concepts and controlled thin-film anodes for lithium-ion and all-solid-state batteries.
+            My work connects thin-film growth with structural, optical, electrical and electrochemical characterization. VO₂ and related oxides provide a strong foundation, alongside smart-window coatings, Raman analysis, MEMS and uncooled infrared detector concepts, and controlled thin-film anodes for lithium-ion and all-solid-state batteries.
           </p>
           <p>
-            Recent work also reaches into programmable laser direct writing, microscale functional structures and transition-enabled thermal management. Across these topics, my emphasis remains the same: connect material-level physics with the behavior that matters in a real structure or device.
+            Recent work extends this workflow into programmable laser direct writing and microscale functional structures. Across these systems, the emphasis remains the same: establish a controlled process, resolve the resulting material behavior and test how it carries into a real structure or device.
           </p>
           <p>
             My academic path spans chemistry and materials science at Hubei Engineering University, graduate thin-film research at Hubei University, and doctoral and postdoctoral work at Justus Liebig University Giessen. Earlier industrial experience in MEMS R&amp;D adds a fabrication and manufacturability perspective to my materials research.

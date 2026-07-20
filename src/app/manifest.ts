@@ -4,10 +4,10 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Dr. Lu Hao — Academic Portfolio",
+    name: "Lu Hao | Thin-Film Materials & Device Research",
     short_name: "Lu Hao Research",
     description:
-      "Functional oxide thin films, phase-transition materials and device physics research by Dr. Lu Hao.",
+      "Thin-film growth, materials characterization, micro/nanofabrication and device-oriented research by Dr. Lu Hao.",
     start_url: "/",
     display: "standalone",
     background_color: "#070b0f",

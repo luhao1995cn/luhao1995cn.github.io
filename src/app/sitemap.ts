@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { insights } from "@/data/insights";
+import { researchCases } from "@/data/research-cases";
 import { siteConfig } from "@/data/site";
 
 export const dynamic = "force-static";
@@ -21,5 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.65
   }));
 
-  return [...staticPages, ...articlePages];
+  const researchPages = researchCases.map((study) => ({
+    url: `${siteConfig.url}/research/${study.slug}/`,
+    lastModified: new Date(siteConfig.lastUpdated),
+    changeFrequency: "yearly" as const,
+    priority: 0.85
+  }));
+
+  return [...staticPages, ...researchPages, ...articlePages];
 }

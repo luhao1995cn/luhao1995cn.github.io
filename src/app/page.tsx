@@ -1,6 +1,5 @@
 import { ArrowRight, Mail } from "lucide-react";
 import Link from "next/link";
-import { ExperienceTimeline } from "@/components/experience/experience-timeline";
 import { ResearchSignal } from "@/components/home/research-signal";
 import { PublicationEntry } from "@/components/publications/publication-entry";
 import { ResearchCard } from "@/components/research/research-card";
@@ -10,7 +9,12 @@ import { PersonJsonLd } from "@/components/seo/person-json-ld";
 import { experience } from "@/data/experience";
 import { featuredArticles } from "@/data/publications";
 import { currentFocus, researchThemes } from "@/data/research";
-import { researchKeywords, siteConfig } from "@/data/site";
+import { researchWorkflow, siteConfig } from "@/data/site";
+
+const featuredThemeIds = new Set(["strain-engineering", "smart-windows", "laser-writing"]);
+const featuredThemes = researchThemes.filter((theme) => featuredThemeIds.has(theme.id));
+const secondaryThemes = researchThemes.filter((theme) => !featuredThemeIds.has(theme.id));
+const currentRole = experience[0];
 
 export default function HomePage() {
   return (
@@ -19,10 +23,10 @@ export default function HomePage() {
       <section className="hero shell">
         <div className="hero-copy">
           <div>
-            <p className="eyebrow">Functional oxides · Thin films · Device physics</p>
+            <p className="eyebrow">Thin-film growth · Characterization · Device integration</p>
             <h1>
-              Phase transitions.
-              <span>Engineered in thin films.</span>
+              Thin films, understood.
+              <span>Devices, enabled.</span>
             </h1>
             <p className="hero-intro">{siteConfig.shortBio}</p>
             <div className="button-row">
@@ -35,9 +39,9 @@ export default function HomePage() {
             </div>
           </div>
           <div className="hero-keywords">
-            <span className="hero-keyword-label">Research spectrum</span>
+            <span className="hero-keyword-label">Research workflow</span>
             <ul>
-              {researchKeywords.slice(0, 5).map((keyword) => <li key={keyword}>{keyword}</li>)}
+              {researchWorkflow.map((stage) => <li key={stage}>{stage}</li>)}
             </ul>
           </div>
         </div>
@@ -49,18 +53,42 @@ export default function HomePage() {
       <section className="section section-rule shell" id="research">
         <Reveal>
           <SectionHeading
-            eyebrow="Selected research"
-            title="From atomic arrangement to device response."
-            description="A research practice built around structure–property relationships: tune a thin-film system, resolve what changes across the transition, then test what that behavior can enable."
+            eyebrow="Featured case studies"
+            title="Three projects across the materials-to-device workflow."
+            description="Detailed cases show how controlled thin-film systems, physical characterization and fabrication connect to evidence and device-facing questions."
           />
         </Reveal>
-        <div className="research-grid">
-          {researchThemes.map((theme, index) => (
+        <div className="featured-research-grid">
+          {featuredThemes.map((theme, index) => (
             <Reveal key={theme.id} delay={index * 0.06}>
               <ResearchCard theme={theme} />
             </Reveal>
           ))}
         </div>
+        <Reveal className="secondary-research-block">
+          <div className="secondary-research-heading">
+            <div>
+              <p className="eyebrow">Additional domains</p>
+              <h2>Related device and energy-storage directions.</h2>
+            </div>
+            <p>These themes extend the same processing–characterization logic without competing with the three principal case studies.</p>
+          </div>
+          <div className="secondary-research-grid">
+            {secondaryThemes.map((theme) => (
+              <Link key={theme.id} href={theme.href}>
+                <span>{theme.index}</span>
+                <div>
+                  <h3>{theme.title}</h3>
+                  <p>{theme.description}</p>
+                  <ul aria-label={`${theme.title} topics`}>
+                    {theme.tags.map((tag) => <li key={tag}>{tag}</li>)}
+                  </ul>
+                </div>
+                <ArrowRight aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       <section className="section publication-section">
@@ -68,8 +96,8 @@ export default function HomePage() {
           <Reveal>
             <SectionHeading
               eyebrow="Selected publications"
-              title="Peer-reviewed work across phase-transition materials."
-              description="Selected articles on VO₂ strain, alloying, Raman response and smart-window buffer layers. Full bibliographic records are available on the publications page."
+              title="Evidence across thin films and functional materials."
+              description="Selected articles on epitaxy, strain, alloying, spectroscopy and interface design. Full bibliographic records are available on the publications page."
             />
           </Reveal>
           <div className="publication-list">
@@ -87,45 +115,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section section-rule shell">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Experience"
-            title="Research milestones, from thin films to devices."
-            description="Postdoctoral and doctoral research, industrial MEMS engineering and international materials work across functional thin films and device fabrication."
-          />
-        </Reveal>
-        <Reveal>
-          <ExperienceTimeline items={experience.slice(0, 3)} />
-        </Reveal>
-        <div className="section-link-row">
-          <Link className="text-link" href="/experience/">
-            Full experience record <ArrowRight aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
-
-      <section className="section focus-section">
-        <div className="shell">
-          <Reveal>
-            <SectionHeading
-            eyebrow="Current focus"
-            title="Three active lines of thought."
-            description="Current questions connecting functional materials, microscale structures and device-relevant performance."
-            />
+      <section className="section section-rule home-current-section">
+        <div className="shell home-current-grid">
+          <Reveal className="home-current-role">
+            <p className="eyebrow">Current position</p>
+            <span>{currentRole.period}</span>
+            <h2>{currentRole.title}</h2>
+            <h3>{currentRole.organization}</h3>
+            <p>{currentRole.description}</p>
+            <Link className="text-link" href="/experience/">
+              Full experience record <ArrowRight aria-hidden="true" />
+            </Link>
           </Reveal>
-          <div className="focus-grid">
-            {currentFocus.map((item, index) => (
-              <Reveal key={item.title} delay={index * 0.08}>
-                <article className="focus-card">
+          <Reveal className="home-current-focus" delay={0.08}>
+            <p className="eyebrow">Current focus</p>
+            <h2>Questions in progress.</h2>
+            <div>
+              {currentFocus.map((item, index) => (
+                <article key={item.title}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
-                  <p className="eyebrow">{item.label}</p>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+                  <div>
+                    <small>{item.label}</small>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
                 </article>
-              </Reveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -134,7 +151,7 @@ export default function HomePage() {
           <div className="contact-banner">
             <div>
               <p className="eyebrow">Contact</p>
-              <h2>Let’s connect materials physics with the next useful device question.</h2>
+              <h2>Let’s connect a materials question with a useful device direction.</h2>
             </div>
             <div className="contact-banner-action">
               <a className="button-primary" href={`mailto:${siteConfig.email}`}>

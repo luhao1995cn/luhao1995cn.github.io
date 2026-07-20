@@ -8,7 +8,7 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Research",
-  description: "Research themes spanning VO₂ thin films, functional oxides, thin-film battery anodes, all-solid-state batteries, MEMS, infrared detectors and laser microfabrication.",
+  description: "Research connecting thin-film growth, structure–property characterization and micro/nanofabrication with coatings, batteries, sensing and device-oriented materials.",
   path: "/research/"
 });
 
@@ -17,16 +17,16 @@ export default function ResearchPage() {
     <>
       <PageHeader
         eyebrow="Research"
-        title="Functional thin films, resolved from structure to application."
-        intro="The research program connects VO₂ and related functional oxides with complementary thin-film energy-storage systems: how deposition, composition and interfaces govern material response—and how that behavior carries into optical, electrical, battery and microscale device concepts."
+        title="Thin-film materials, connected from growth to device performance."
+        intro="The research programme follows a complete experimental workflow: control thin-film composition and interfaces, resolve structural and physical response, then evaluate how that behavior carries into coatings, batteries, sensors and microscale devices."
       />
 
       <section className="section section-rule shell">
         <Reveal>
           <SectionHeading
             eyebrow="Research architecture"
-            title="Grow. Resolve. Translate."
-            description="A compact way to understand how the projects connect, from controlled thin-film structures to practical materials questions."
+            title="Grow. Resolve. Integrate."
+            description="A compact view of how the projects connect, from controlled material synthesis and measurement to device-oriented evaluation."
           />
         </Reveal>
         <div className="approach-grid">
@@ -46,9 +46,9 @@ export default function ResearchPage() {
         <div className="shell">
           <Reveal>
             <SectionHeading
-            eyebrow="Core themes"
-            title="Research themes connected by structure-property relationships."
-            description="Each theme links thin-film design and characterization to a publication, research note or device-facing question."
+            eyebrow="Application domains"
+            title="Different systems, one connected experimental workflow."
+            description="Each theme shows how thin-film design, physical characterization and fabrication connect to a publication, research note or device-facing question."
             />
           </Reveal>
           <div className="research-grid">
@@ -65,8 +65,8 @@ export default function ResearchPage() {
         <Reveal>
           <SectionHeading
             eyebrow="Experimental landscape"
-            title="Methods live in context."
-            description="Thin-film deposition and microfabrication are paired with structural, spectroscopic, optical and electrical analysis."
+            title="Capabilities across the complete research cycle."
+            description="Thin-film deposition and microfabrication are paired with structural, spectroscopic, optical, electrical and electrochemical analysis."
           />
         </Reveal>
         <div className="methods-table">

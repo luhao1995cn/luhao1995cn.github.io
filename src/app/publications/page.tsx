@@ -15,7 +15,7 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Publications",
-  description: "Journal articles, meeting abstracts, patents and conference contributions by Dr. Lu Hao in functional oxides, thin-film battery anodes and related materials physics.",
+  description: "Journal articles, meeting abstracts, patents and conference contributions by Dr. Lu Hao across thin-film materials, characterization and device-oriented research.",
   path: "/publications/"
 });
 

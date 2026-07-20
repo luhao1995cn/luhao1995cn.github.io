@@ -1,5 +1,4 @@
 import { ExternalLink, Mail, MapPin } from "lucide-react";
-import { PrintButton } from "@/components/cv/print-button";
 import { education, experience } from "@/data/experience";
 import { meetingAbstracts, patents, peerReviewedArticles } from "@/data/publications";
 import { capabilities, researchKeywords, siteConfig, socialLinks } from "@/data/site";
@@ -58,11 +57,6 @@ function PublicationList({ articles }: { articles: typeof peerReviewedArticles }
 export default function CVPage() {
   return (
     <section className="cv-page shell">
-      <div className="cv-toolbar print-hidden">
-        <p>Academic CV · selected professional information</p>
-        <PrintButton />
-      </div>
-
       <header className="cv-header">
         <div>
           <p className="eyebrow">Curriculum vitae</p>

@@ -6,7 +6,7 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Contact",
-  description: "Contact Dr. Lu Hao about functional oxide thin films, battery anodes, phase-transition materials, MEMS and infrared sensing research.",
+  description: "Contact Dr. Lu Hao about thin-film growth, materials characterization, micro/nanofabrication and device-oriented research.",
   path: "/contact/"
 });
 

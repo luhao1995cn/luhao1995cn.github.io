@@ -7,9 +7,9 @@ import { withBasePath } from "@/lib/paths";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Research notes",
+  title: "Journal",
   description:
-    "Research notes by Lu Hao on functional oxide thin films, phase transitions, infrared sensing and microfabrication.",
+    "Research notes, project updates, academic exchange and perspectives from Lu Hao's work across materials physics and thin-film devices.",
   path: "/insights/"
 });
 
@@ -17,9 +17,9 @@ export default function InsightsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Notes · methods · perspectives"
-        title="Research notes"
-        intro="Working explanations, practical methods and device-oriented perspectives from research in functional materials."
+        eyebrow="Research · news · perspectives"
+        title="Journal"
+        intro="Research notes, practical methods, project milestones and academic exchange from ongoing work in materials physics and thin-film devices."
       />
 
       <section className="section section-rule" aria-labelledby="insights-list-heading">
@@ -29,7 +29,7 @@ export default function InsightsPage() {
               id="insights-list-heading"
               className="m-0 text-[clamp(1.5rem,3vw,2.4rem)] font-medium tracking-[-0.045em]"
             >
-              All notes
+              All entries
             </h2>
             <p className="mono m-0 text-[10px] uppercase tracking-[0.16em] text-[var(--faint)]">
               {String(insights.length).padStart(2, "0")} entries
@@ -89,7 +89,7 @@ export default function InsightsPage() {
                           {insight.excerpt}
                         </p>
                         <span className="mt-auto inline-flex items-center gap-2 text-[11px] font-bold tracking-[0.04em] text-[var(--accent)]">
-                          Read note
+                          Read article
                           <ArrowUpRight
                             className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                             aria-hidden="true"

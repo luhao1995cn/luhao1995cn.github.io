@@ -3,7 +3,7 @@ import { withBasePath } from "@/lib/paths";
 
 export function ResearchSignal() {
   return (
-    <div className="research-signal" aria-label="Research visual: microstructure and phase-transition signal">
+    <div className="research-signal" aria-label="Research visual: microstructure and material-response signal">
       <Image
         src={withBasePath("/assets/site/hero-sem-microstructure-720.webp")}
         alt="Scanning electron microscope view of a radial laser-written microstructure"
@@ -36,8 +36,8 @@ export function ResearchSignal() {
         </svg>
       </div>
       <div className="signal-label">
-        <span>Phase transition</span>
-        <strong>M1 ↔ R</strong>
+        <span>Material response</span>
+        <strong>Structure ↔ function</strong>
       </div>
       <div className="signal-profile">
         <Image
@@ -49,7 +49,7 @@ export function ResearchSignal() {
         <div>
           <small>Researcher</small>
           <strong>Dr. Lu Hao</strong>
-          <span>Condensed-matter physics</span>
+          <span>Materials physics · Devices</span>
         </div>
       </div>
     </div>

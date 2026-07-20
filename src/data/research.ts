@@ -10,7 +10,7 @@ export const researchThemes: ResearchTheme[] = [
     image: "/assets/research/vo2-tio2-strain-640.webp",
     imageAlt: "Diagram of strain engineering in VO2 thin-film structures",
     tags: ["VO₂", "Epitaxy", "Metal–insulator transition"],
-    href: "/publications/#apl-2023-strain"
+    href: "/research/strain-engineered-vo2/"
   },
   {
     id: "smart-windows",
@@ -21,7 +21,7 @@ export const researchThemes: ResearchTheme[] = [
     image: "/assets/research/smart-windows-720.webp",
     imageAlt: "Scientific diagram of a VO2 smart-window thin-film stack",
     tags: ["Smart windows", "Buffer layers", "Functional coatings"],
-    href: "/publications/#semsc-2026-buffer"
+    href: "/research/smart-window-buffer-layers/"
   },
   {
     id: "infrared-sensing",
@@ -43,7 +43,7 @@ export const researchThemes: ResearchTheme[] = [
     image: "/assets/research/laser-microstructure-720.webp",
     imageAlt: "Laser-written microscale structure viewed through a microscope",
     tags: ["Laser direct writing", "NanoScript", "Microstructures"],
-    href: "/insights/laser-direct-writing-with-nanoscript/"
+    href: "/research/programmable-laser-microstructures/"
   },
   {
     id: "battery-anodes",
@@ -92,16 +92,16 @@ export const researchApproach = [
   {
     step: "01",
     title: "Grow",
-    body: "Control composition, interfaces and strain through thin-film deposition and buffer-layer design."
+    body: "Control composition, interfaces, strain and architecture through thin-film deposition and process design."
   },
   {
     step: "02",
     title: "Resolve",
-    body: "Connect structure, optical response and electrical behavior across the phase transition."
+    body: "Connect structure and chemistry with optical, electrical and electrochemical material response."
   },
   {
     step: "03",
-    title: "Translate",
-    body: "Evaluate how material-level behavior carries into coatings, thermistors, battery anodes and microscale devices."
+    title: "Integrate",
+    body: "Carry material-level understanding into coatings, thermistors, battery anodes, microstructures and device concepts."
   }
 ];

@@ -89,13 +89,14 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     id: "ruvo2-2020-pressure",
-    kind: "unverified-record",
+    kind: "journal-article",
     year: 2020,
     authors: "Ruiqi Cao, Hao Lu, Xin Tao, et al.",
     title:
       "Effect of deposition oxygen pressure on the structure and MIT characteristics of RuVO₂ alloy thin films",
-    details: "Full journal and DOI details pending confirmation",
-    verificationNote: "Listed separately until the complete bibliographic record is available."
+    journal: "Journal of Hubei University (Natural Science)",
+    details: "2020(3)",
+    doi: "https://doi.org/10.3969/j.issn.1000-2375.2020.03.003"
   },
   {
     id: "ass-2019-zncr2o4",
