@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { ArrowUpRight, Copy, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
 import { siteConfig, socialLinks } from "@/data/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Contact",
   description: "Contact Dr. Lu Hao about functional oxide thin films, battery anodes, phase-transition materials, MEMS and infrared sensing research.",
-  alternates: { canonical: "/contact/" }
-};
+  path: "/contact/"
+});
 
 export default function ContactPage() {
   return (
@@ -26,7 +26,7 @@ export default function ContactPage() {
             {siteConfig.email}
             <ArrowUpRight aria-hidden="true" />
           </a>
-          <p>Institutional address verified against public research records.</p>
+          <p>For research collaboration, scientific exchange and professional enquiries.</p>
         </Reveal>
         <Reveal className="contact-details" delay={0.08}>
           <div className="contact-detail-row">
@@ -58,7 +58,7 @@ export default function ContactPage() {
             <div className="contact-note">
               <span>01</span>
               <p>
-                Privacy by design: only the institutional email address and city-level research location are published. The source CV&apos;s phone number, street address, birth details, nationality, private email and third-party email addresses are intentionally excluded.
+                Only professional contact information is published on this website.
               </p>
             </div>
           </Reveal>

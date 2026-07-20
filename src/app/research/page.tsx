@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/page-header";
 import { Reveal } from "@/components/ui/reveal";
 import { ResearchCard } from "@/components/research/research-card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { broaderInterests, researchApproach, researchThemes } from "@/data/research";
 import { capabilities } from "@/data/site";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Research",
   description: "Research themes spanning VO₂ thin films, functional oxides, thin-film battery anodes, all-solid-state batteries, MEMS, infrared detectors and laser microfabrication.",
-  alternates: { canonical: "/research/" }
-};
+  path: "/research/"
+});
 
 export default function ResearchPage() {
   return (
@@ -46,9 +46,9 @@ export default function ResearchPage() {
         <div className="shell">
           <Reveal>
             <SectionHeading
-              eyebrow="Core themes"
-              title="Research stories with a direct evidence trail."
-              description="Each theme links to a publication or project note already present in the source repository."
+            eyebrow="Core themes"
+            title="Research themes connected by structure-property relationships."
+            description="Each theme links thin-film design and characterization to a publication, research note or device-facing question."
             />
           </Reveal>
           <div className="research-grid">
@@ -66,7 +66,7 @@ export default function ResearchPage() {
           <SectionHeading
             eyebrow="Experimental landscape"
             title="Methods live in context."
-            description="The previous site records sustained work with PLD, ion-beam sputtering and sputtering, alongside structural, spectroscopic and electrical analysis."
+            description="Thin-film deposition and microfabrication are paired with structural, spectroscopic, optical and electrical analysis."
           />
         </Reveal>
         <div className="methods-table">

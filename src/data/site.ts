@@ -11,6 +11,7 @@ export const siteConfig = {
     "I study how interfaces, composition and structure shape functional thin films—and how those relationships can be translated into sensing, energy-storage and microdevice concepts.",
   location: "Giessen, Germany",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://luhao1995cn.github.io",
+  lastUpdated: "2026-07-20",
   email: "hao.lu@uni-giessen.de",
   profileImage: "/assets/site/profile-lu-hao.webp",
   profileImageAlt: "Portrait of Dr. Lu Hao"

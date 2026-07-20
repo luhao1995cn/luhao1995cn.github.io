@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { PageHeader } from "@/components/ui/page-header";
@@ -7,12 +6,13 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { capabilities, siteConfig } from "@/data/site";
 import { broaderInterests } from "@/data/research";
 import { withBasePath } from "@/lib/paths";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "About",
   description: "About Dr. Lu Hao, a condensed-matter physicist working on VO₂, functional oxide thin films and device-facing phase-transition research.",
-  alternates: { canonical: "/about/" }
-};
+  path: "/about/"
+});
 
 export default function AboutPage() {
   return (
@@ -20,7 +20,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="About"
         title="A materials physicist focused on transitions that can do useful work."
-        intro="Dr. Lu Hao is a postdoctoral researcher working across condensed-matter physics, functional oxide thin films and device-oriented materials questions, with VO₂ as a central research system."
+        intro="I am a postdoctoral researcher working across condensed-matter physics, functional oxide thin films and device-oriented materials questions, with VO₂ as a central research system."
       />
 
       <section className="section section-rule shell about-profile">
@@ -45,13 +45,13 @@ export default function AboutPage() {
             The central question is how a material&apos;s structure—and the strain, interfaces and composition around it—reshapes a phase transition.
           </p>
           <p>
-            Lu&apos;s work connects thin-film growth and characterization with optical and electrical response. The research record spans VO₂/TiO₂ epitaxy, alloyed and buffered VO₂ systems, smart-window coatings, Raman analysis, MEMS and uncooled infrared detector concepts.
+            My work connects thin-film growth and characterization with optical, electrical and electrochemical response. It spans VO₂/TiO₂ epitaxy, alloyed and buffered VO₂ systems, smart-window coatings, Raman analysis, MEMS, uncooled infrared detector concepts and controlled thin-film anodes for lithium-ion and all-solid-state batteries.
           </p>
           <p>
-            Recent work also reaches into programmable laser direct writing, microscale functional structures and transition-enabled thermal management. Across these topics, the emphasis remains the same: build a defensible link between material-level physics and the behavior that matters in a real structure or device.
+            Recent work also reaches into programmable laser direct writing, microscale functional structures and transition-enabled thermal management. Across these topics, my emphasis remains the same: connect material-level physics with the behavior that matters in a real structure or device.
           </p>
           <p>
-            His academic path spans chemistry and materials science at Hubei Engineering University, graduate thin-film research at Hubei University, and doctoral and postdoctoral work at Justus Liebig University Giessen. Earlier industrial experience in MEMS R&amp;D adds a fabrication and manufacturability perspective to the materials research.
+            My academic path spans chemistry and materials science at Hubei Engineering University, graduate thin-film research at Hubei University, and doctoral and postdoctoral work at Justus Liebig University Giessen. Earlier industrial experience in MEMS R&amp;D adds a fabrication and manufacturability perspective to my materials research.
           </p>
           <a className="text-link" href="https://doi.org/10.22029/jlupub-20608" target="_blank" rel="noreferrer">
             Doctoral thesis record <ArrowUpRight aria-hidden="true" />
@@ -65,7 +65,7 @@ export default function AboutPage() {
             <SectionHeading
               eyebrow="Research practice"
               title="An experimental toolkit spanning growth, analysis and translation."
-              description="Methods shown here are taken from the existing research and project record; exposure to ALD and MBE is intentionally not presented as a headline specialization."
+              description="Core methods used to grow, resolve and translate functional thin films, complemented by broader experience across deposition and microfabrication platforms."
             />
           </Reveal>
           <div className="capability-grid">
@@ -89,7 +89,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Broader interests"
             title="Adjacent systems and emerging questions."
-            description="These are explicitly listed research interests on the previous site. They are separated from featured projects where the repository contains direct supporting work."
+            description="Related materials systems and device questions that extend the central thin-film research programme."
           />
         </Reveal>
         <div className="interest-list">

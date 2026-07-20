@@ -3,6 +3,7 @@ import type { JournalArticle, Patent } from "@/types/content";
 export const journalArticles: JournalArticle[] = [
   {
     id: "semsc-2026-buffer",
+    kind: "journal-article",
     year: 2026,
     authors: "Hao Lu, Martin Becker, Jan Luka Dornseifer, Angelika Polity, Peter J. Klar",
     title:
@@ -14,6 +15,7 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     id: "ecs-2025-sinx-anodes",
+    kind: "meeting-abstract",
     year: 2025,
     authors:
       "Federico Rossi, Burak Aktekin, Hao Lu, Martin Becker, Moritz Loewenich, Atharva Harshawardhan Ladole, Marvin Kraft, Hartmut Wiggers, Wolfgang Zeier, Jürgen Janek",
@@ -22,11 +24,11 @@ export const journalArticles: JournalArticle[] = [
     journal: "ECS Meeting Abstracts",
     details: "MA2025-01(3), 331–331 · Meeting abstract",
     doi: "https://doi.org/10.1149/MA2025-013331mtgabs",
-    verificationNote:
-      "Public ORCID record; classified by The Electrochemical Society as a meeting abstract."
+    verificationNote: "Meeting abstract published by The Electrochemical Society."
   },
   {
     id: "jrs-2024-raman",
+    kind: "journal-article",
     year: 2024,
     authors:
       "Florian Kuhl, Hao Lu, Martin Becker, Limei Chen, Yonghui Zheng, Angelika Polity, Zaoli Zhang, Yunbin He, Peter J. Klar",
@@ -39,6 +41,7 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     id: "apl-2023-strain",
+    kind: "journal-article",
     year: 2023,
     authors:
       "Hao Lu, Lei Li, Zhiwu Tang, Maji Xu, Yonghui Zheng, Martin Becker, Yinmei Lu, Mingkai Li, Pai Li, Zaoli Zhang, Peter J. Klar, Yunbin He",
@@ -51,6 +54,7 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     id: "nanoscale-2021-diffusion",
+    kind: "journal-article",
     year: 2021,
     authors: "Yonghui Zheng, Zhuo Chen, Hao Lu, Yan Cheng, Xin Chen, Yunbin He, Zaoli Zhang",
     title: "The formation of TiO₂/VO₂ multilayer structure via directional cationic diffusion",
@@ -60,6 +64,7 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     id: "apl-2021-hfw",
+    kind: "journal-article",
     year: 2021,
     authors:
       "Xinru Wang, Lufeng Chen, Hao Lu, Wenyu Fang, Hao Li, Weiling Yin, Mingkai Li, Yinmei Lu, Pai Li, Yunbin He",
@@ -71,6 +76,7 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     id: "apl-2020-ruvo2",
+    kind: "journal-article",
     year: 2020,
     authors:
       "Hao Lu, Lufeng Chen, Ruiqi Cao, Xin Tao, Xinru Wang, Mingkai Li, Pai Li, Yinmei Lu, Peter J. Klar, Yunbin He",
@@ -83,15 +89,17 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     id: "ruvo2-2020-pressure",
+    kind: "unverified-record",
     year: 2020,
     authors: "Ruiqi Cao, Hao Lu, Xin Tao, et al.",
     title:
       "Effect of deposition oxygen pressure on the structure and MIT characteristics of RuVO₂ alloy thin films",
-    details: "Repository record; full bibliographic details need confirmation",
-    verificationNote: "The DOI previously shown on this site does not resolve and has been withheld."
+    details: "Full journal and DOI details pending confirmation",
+    verificationNote: "Listed separately until the complete bibliographic record is available."
   },
   {
     id: "ass-2019-zncr2o4",
+    kind: "journal-article",
     year: 2019,
     authors:
       "Qile Wang, Jian Chen, Hao Lu, Pan Huang, Jiabin Wang, Mingkai Li, Yinmei Lu, Gang Chang, Zhe Chuan Feng, Yunbin He",
@@ -103,6 +111,7 @@ export const journalArticles: JournalArticle[] = [
   },
   {
     id: "ms-2018-oxygen-pressure",
+    kind: "journal-article",
     year: 2018,
     authors: "Xin Tao, Hao Lu, Pai Li, Yinmei Lu, Yunbin He",
     title:
@@ -150,4 +159,16 @@ export const patents: Patent[] = [
   }
 ];
 
-export const featuredArticles = journalArticles.filter((article) => article.featured);
+export const peerReviewedArticles = journalArticles.filter(
+  (article) => article.kind === "journal-article"
+);
+
+export const meetingAbstracts = journalArticles.filter(
+  (article) => article.kind === "meeting-abstract"
+);
+
+export const unverifiedPublicationRecords = journalArticles.filter(
+  (article) => article.kind === "unverified-record"
+);
+
+export const featuredArticles = peerReviewedArticles.filter((article) => article.featured);

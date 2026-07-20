@@ -18,7 +18,7 @@ export default function HomePage() {
       <PersonJsonLd />
       <section className="hero shell">
         <div className="hero-copy">
-          <Reveal>
+          <div>
             <p className="eyebrow">Functional oxides · Thin films · Device physics</p>
             <h1>
               Phase transitions.
@@ -33,17 +33,17 @@ export default function HomePage() {
                 View publications
               </Link>
             </div>
-          </Reveal>
-          <Reveal className="hero-keywords" delay={0.14}>
+          </div>
+          <div className="hero-keywords">
             <span className="hero-keyword-label">Research spectrum</span>
             <ul>
               {researchKeywords.slice(0, 5).map((keyword) => <li key={keyword}>{keyword}</li>)}
             </ul>
-          </Reveal>
+          </div>
         </div>
-        <Reveal className="hero-visual-wrap" delay={0.12}>
+        <div className="hero-visual-wrap">
           <ResearchSignal />
-        </Reveal>
+        </div>
       </section>
 
       <section className="section section-rule shell" id="research">
@@ -92,7 +92,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Experience"
             title="Research milestones, from thin films to devices."
-            description="Postdoctoral and doctoral research, industrial MEMS engineering and international materials work, sourced from the owner-supplied CV and public academic records."
+            description="Postdoctoral and doctoral research, industrial MEMS engineering and international materials work across functional thin films and device fabrication."
           />
         </Reveal>
         <Reveal>
@@ -109,9 +109,9 @@ export default function HomePage() {
         <div className="shell">
           <Reveal>
             <SectionHeading
-              eyebrow="Current focus"
-              title="Three active lines of thought."
-              description="Current themes drawn from the most recent project and research notes in this repository."
+            eyebrow="Current focus"
+            title="Three active lines of thought."
+            description="Current questions connecting functional materials, microscale structures and device-relevant performance."
             />
           </Reveal>
           <div className="focus-grid">

@@ -8,8 +8,8 @@ const staticRoutes = ["", "/about", "/research", "/publications", "/experience",
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = staticRoutes.map((route, index) => ({
-    url: `${siteConfig.url}${route}/`.replace(`${siteConfig.url}//`, `${siteConfig.url}/`),
-    lastModified: new Date("2026-07-18"),
+    url: new URL(`${route || ""}/`, `${siteConfig.url}/`).toString(),
+    lastModified: new Date(siteConfig.lastUpdated),
     changeFrequency: (index === 0 ? "monthly" : "yearly") as "monthly" | "yearly",
     priority: index === 0 ? 1 : route === "/research" || route === "/publications" ? 0.9 : 0.7
   }));
