@@ -195,6 +195,7 @@ export const insights: InsightMeta[] = [
       "A speculative hardware-level hypothesis exploring stochastic perturbations and emergent machine behavior.",
     image: "/assets/posts/consciousness-hypothesis.webp",
     imageAlt: "Abstract visualization accompanying the machine consciousness hypothesis",
+    showReferences: false,
     references: [
       {
         citation: "S. Dehaene, H. Lau and S. Kouider, Science 358, 486-492 (2017).",
