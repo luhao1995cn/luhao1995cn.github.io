@@ -109,6 +109,7 @@ export type InsightMeta = {
   excerpt: string;
   image?: string;
   imageAlt?: string;
+  showReferences?: boolean;
   references: Array<{
     citation: string;
     href: string;

@@ -12,6 +12,7 @@ export const insights: InsightMeta[] = [
       "Five reflections from an academic and industrial journey through China’s fast-moving solid-state battery ecosystem.",
     image: "/assets/posts/china-battery-visit/beijing-visit.jpg",
     imageAlt: "Members of the visiting group in Beijing",
+    showReferences: false,
     references: [
       {
         citation: "J. Janek and W. G. Zeier, Challenges in speeding up solid-state battery development, Nature Energy 8, 230–240 (2023).",

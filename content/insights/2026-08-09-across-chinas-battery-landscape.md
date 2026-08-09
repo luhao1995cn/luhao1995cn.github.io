@@ -57,7 +57,7 @@ The point that interests me most is how many basic scientific questions remain u
 
 A solid-state battery is not simply a materials-optimization problem. It is a multiscale, strongly coupled system involving ionic and electronic transport, interfacial reactions, defects, mechanical stress, chemical potentials, space-charge effects, phase transformations and non-equilibrium processes. In a broader physical sense, it is a problem with many interacting degrees of freedom whose collective behaviour cannot be understood by optimizing each component in isolation.
 
-This is why I hope more researchers with backgrounds in physics will enter the field and work closely with chemists, materials scientists and engineers. Improving individual performance metrics remains essential, but deeper mechanistic understanding may be what ultimately enables the next major technological shift. The challenges and development targets are discussed in detail by [Jürgen Janek and Wolfgang G. Zeier in *Nature Energy*](https://doi.org/10.1038/s41560-023-01208-9).
+This is why I hope more researchers with backgrounds in physics will enter the field and work closely with chemists, materials scientists and engineers. Improving individual performance metrics remains essential, but deeper mechanistic understanding may be what ultimately enables the next major technological shift.
 
 ## Looking ahead
 
