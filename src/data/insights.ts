@@ -2,6 +2,28 @@ import type { InsightMeta } from "@/types/content";
 
 export const insights: InsightMeta[] = [
   {
+    sourceFile: "2026-08-09-across-chinas-battery-landscape.md",
+    slug: "across-chinas-battery-landscape",
+    title: "Across China’s Battery Landscape: Reflections from an Academic–Industry Visit",
+    date: "2026-08-09",
+    displayDate: "09 Aug 2026",
+    category: "Battery research & exchange",
+    excerpt:
+      "Five reflections from an academic and industrial journey through China’s fast-moving solid-state battery ecosystem.",
+    image: "/assets/posts/china-battery-visit/beijing-visit.jpg",
+    imageAlt: "Members of the visiting group in Beijing",
+    references: [
+      {
+        citation: "J. Janek and W. G. Zeier, Challenges in speeding up solid-state battery development, Nature Energy 8, 230–240 (2023).",
+        href: "https://doi.org/10.1038/s41560-023-01208-9"
+      },
+      {
+        citation: "International Energy Agency, Global EV Outlook 2025 (2025).",
+        href: "https://www.iea.org/reports/global-ev-outlook-2025"
+      }
+    ]
+  },
+  {
     sourceFile: "2026-06-06-Sino-German Workshop on VO₂-Based Energy-Saving Coatings and Smart Sensing Materials.md",
     slug: "Sino-German-Workshop-on-VO-Based-Energy-Saving-Coatings-and-Smart-Sensing-Materials",
     title: "Sino-German Workshop on VO₂-Based Energy-Saving Coatings and Smart Sensing Materials",
