@@ -68,7 +68,7 @@ export function InsightArticle({ insight }: InsightArticleProps) {
           </time>
         </div>
 
-        <h1 className="m-0 max-w-[1120px] text-[clamp(2.7rem,7vw,6.7rem)] leading-[0.96] font-medium tracking-[-0.067em] text-[var(--ink)] text-balance">
+        <h1 className="m-0 max-w-[1120px] text-[clamp(2.65rem,6.2vw,5.75rem)] leading-[1] font-medium text-[var(--ink)] text-pretty">
           {insight.title}
         </h1>
         <p className="mt-9 mb-0 max-w-[760px] text-[clamp(1rem,1.55vw,1.3rem)] leading-[1.7] text-[var(--muted)]">
