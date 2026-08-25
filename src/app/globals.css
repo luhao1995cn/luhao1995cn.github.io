@@ -20,6 +20,11 @@
   --radius: 24px;
   --radius-lg: 36px;
   --shell: 1280px;
+  --tracking-display: -0.035em;
+  --tracking-heading: -0.022em;
+  --word-spacing-display: 0.085em;
+  --word-spacing-heading: 0.055em;
+  --word-spacing-body: 0.025em;
 }
 
 * {
@@ -44,6 +49,26 @@ body {
   font-feature-settings: "ss02", "ss03", "cv01";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+/*
+ * Manrope's display forms become difficult to scan when strong negative
+ * tracking also compresses the spaces between words. Keep the editorial,
+ * close-set character rhythm while restoring a clear word boundary across
+ * every page and content type.
+ */
+:where(h1, h2) {
+  letter-spacing: var(--tracking-display) !important;
+  word-spacing: var(--word-spacing-display);
+}
+
+:where(h3, h4) {
+  letter-spacing: var(--tracking-heading) !important;
+  word-spacing: var(--word-spacing-heading);
+}
+
+:where(p, li, dd, blockquote) {
+  word-spacing: var(--word-spacing-body);
 }
 
 body::before {
