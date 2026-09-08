@@ -2,6 +2,20 @@ import type { InsightMeta } from "@/types/content";
 
 export const insights: InsightMeta[] = [
   {
+    sourceFile: "2026-09-08-sino-german-academic-meeting-giessen.md",
+    slug: "sino-german-academic-meeting-giessen",
+    title: "A Sino-German Academic Meeting in Giessen",
+    date: "2026-09-08",
+    displayDate: "08 Sep 2026",
+    category: "Academic exchange",
+    excerpt:
+      "Reflections on helping organize a bilateral meeting in Giessen and presenting our latest work on laser-written terahertz-responsive devices.",
+    image: "/assets/posts/giessen-sino-german-2026/group-photo.webp",
+    imageAlt: "Participants at the 2026 Sino-German academic meeting in Giessen",
+    showReferences: false,
+    references: []
+  },
+  {
     sourceFile: "2026-08-09-across-chinas-battery-landscape.md",
     slug: "across-chinas-battery-landscape",
     title: "Across China’s Battery Landscape: Reflections from an Academic–Industry Visit",
