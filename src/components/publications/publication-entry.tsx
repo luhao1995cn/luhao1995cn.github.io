@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import type { JournalArticle } from "@/types/content";
+import type { DoctoralThesis, JournalArticle } from "@/types/content";
 
 function Authors({ value }: { value: string }) {
   const parts = value.split(/(Hao Lu)/g);
@@ -10,7 +10,8 @@ function Authors({ value }: { value: string }) {
   );
 }
 
-export function PublicationEntry({ article, ordinal }: { article: JournalArticle; ordinal?: number }) {
+export function PublicationEntry({ article, ordinal }: { article: JournalArticle | DoctoralThesis; ordinal?: number }) {
+  const venue = article.kind === "doctoral-thesis" ? article.institution : article.journal;
   const content = (
     <>
       <div className="publication-marker">
@@ -20,8 +21,8 @@ export function PublicationEntry({ article, ordinal }: { article: JournalArticle
         <p className="publication-authors"><Authors value={article.authors} /></p>
         <h3>{article.title}</h3>
         <p className="publication-journal">
-          {article.journal ? <em>{article.journal}</em> : null}
-          {article.journal && article.details ? <span> · </span> : null}
+          {venue ? <em>{venue}</em> : null}
+          {venue && article.details ? <span> · </span> : null}
           {article.details}
         </p>
         {article.verificationNote ? <p className="verification-note">{article.verificationNote}</p> : null}

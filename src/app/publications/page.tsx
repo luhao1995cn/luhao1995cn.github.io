@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { conferences } from "@/data/experience";
 import {
+  doctoralTheses,
   meetingAbstracts,
   patents,
   peerReviewedArticles,
@@ -15,7 +16,7 @@ import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
   title: "Publications",
-  description: "Journal articles, meeting abstracts, patents and conference contributions by Dr. Lu Hao across thin-film materials, characterization and device-oriented research.",
+  description: "Doctoral thesis, journal articles, meeting abstracts, patents and conference contributions by Dr. Lu Hao across thin-film materials, characterization and device-oriented research.",
   path: "/publications/"
 });
 
@@ -26,8 +27,23 @@ export default function PublicationsPage() {
       <PageHeader
         eyebrow="Publications"
         title="Research outputs across materials physics and thin-film devices."
-        intro="Peer-reviewed journal articles, meeting abstracts, patents and conference contributions are presented in separate sections for clarity."
+        intro="Doctoral research, peer-reviewed journal articles, meeting abstracts, patents and conference contributions."
       />
+
+      <section id="doctoral-thesis" className="section section-rule shell">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Doctoral research"
+            title="Doctoral thesis"
+            description="Strain engineering and buffer-layer design connecting phase-transition physics with VO₂ smart-window applications."
+          />
+        </Reveal>
+        <div className="publication-list">
+          {doctoralTheses.map((thesis) => (
+            <PublicationEntry key={thesis.id} article={thesis} />
+          ))}
+        </div>
+      </section>
 
       <section className="section section-rule shell">
         <Reveal>

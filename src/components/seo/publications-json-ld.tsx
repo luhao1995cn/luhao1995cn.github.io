@@ -1,4 +1,4 @@
-import { meetingAbstracts, peerReviewedArticles } from "@/data/publications";
+import { doctoralTheses, meetingAbstracts, peerReviewedArticles } from "@/data/publications";
 import { siteConfig } from "@/data/site";
 
 export function PublicationsJsonLd() {
@@ -17,7 +17,18 @@ export function PublicationsJsonLd() {
 
   const structuredData = {
     "@context": "https://schema.org",
-    "@graph": works
+    "@graph": [...works, ...doctoralTheses.map((thesis) => ({
+      "@type": "Thesis",
+      "@id": `${siteConfig.url}/publications/#${thesis.id}`,
+      name: thesis.title,
+      author: { "@type": "Person", name: thesis.authors },
+      datePublished: String(thesis.year),
+      inSupportOf: "Doctorate in Natural Sciences (Physics)",
+      sourceOrganization: { "@type": "CollegeOrUniversity", name: thesis.institution },
+      url: thesis.doi,
+      sameAs: thesis.doi,
+      identifier: thesis.doi
+    }))]
   };
 
   return (

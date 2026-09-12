@@ -1,4 +1,4 @@
-import type { JournalArticle, Patent } from "@/types/content";
+import type { DoctoralThesis, JournalArticle, Patent } from "@/types/content";
 
 export const journalArticles: JournalArticle[] = [
   {
@@ -163,6 +163,19 @@ export const patents: Patent[] = [
 export const peerReviewedArticles = journalArticles.filter(
   (article) => article.kind === "journal-article"
 );
+
+export const doctoralTheses: DoctoralThesis[] = [
+  {
+    id: "doctoral-thesis-2025",
+    kind: "doctoral-thesis",
+    year: 2025,
+    authors: "Hao Lu",
+    title: "Strain Engineering and Buffer Layer Design in VO₂ Thin Film Structures: From Phase Transition Mechanisms to Smart Window Applications",
+    institution: "Justus Liebig University Giessen",
+    details: "Doctoral thesis · Physics",
+    doi: "https://doi.org/10.22029/jlupub-20608"
+  }
+];
 
 export const meetingAbstracts = journalArticles.filter(
   (article) => article.kind === "meeting-abstract"

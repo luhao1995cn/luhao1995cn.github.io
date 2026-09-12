@@ -92,6 +92,11 @@ export type Patent = {
   identifier: string;
 };
 
+export type DoctoralThesis = Omit<JournalArticle, "kind" | "journal"> & {
+  kind: "doctoral-thesis";
+  institution: string;
+};
+
 export type Conference = {
   year: number;
   title: string;
