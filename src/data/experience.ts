@@ -25,7 +25,7 @@ export const experience: ExperienceItem[] = [
     title: "MEMS R&D Engineer",
     organization: "Wuhan Guide Infrared Co., Ltd",
     description:
-      "Worked on uncooled infrared-detector simulation, thermosensitive materials, MEMS process integration and manufacturability in an industrial 8-inch wafer environment."
+      "Worked on uncooled infrared-detector simulation, thermosensitive materials, MEMS process integration and manufacturability in an industrial 8-inch wafer environment. Designed silicon neural probes and fabrication process flows for an early-stage brain–computer interface project."
   },
   {
     period: "2018.08–2018.11",
@@ -126,14 +126,26 @@ export const researchProjects: ResearchProject[] = [
   },
   {
     period: "2020–2021",
+    title: "Silicon neural probes for brain–computer interfaces",
+    organization: "Wuhan Guide Infrared Co., Ltd · MEMS department",
+    summary:
+      "Early-stage design and fabrication-feasibility work on invasive silicon Michigan-type neural probes.",
+    highlights: [
+      "Designed 8- and 16-channel neural probe structures in CAD and developed fabrication process flows.",
+      "Assessed feasibility with existing fabrication equipment, reviewed structural stress simulation results and specified photomask design requirements.",
+      "Completed CAD and process-plan review and handed the designs to the fabrication team before departure."
+    ],
+    tags: ["Brain–computer interfaces", "Neural probes", "MEMS"]
+  },
+  {
+    period: "2020–2021",
     title: "MEMS and uncooled infrared detectors",
     organization: "Wuhan Guide Infrared Co., Ltd",
     summary:
       "Device and process engineering for uncooled infrared detectors in an industrial wafer-fabrication setting.",
     highlights: [
       "Evaluated how MEMS geometry, thermosensitive materials and fabrication parameters affect detector performance.",
-      "Supported PVD/CVD deposition, photolithography, patterning and MEMS process integration.",
-      "Led early-stage MEMS feasibility work for a cross-disciplinary brain–computer-interface concept."
+      "Supported PVD/CVD deposition, photolithography, patterning and MEMS process integration."
     ],
     tags: ["MEMS", "Infrared detectors", "Process integration"]
   },
