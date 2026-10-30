@@ -2,6 +2,29 @@ import type { InsightMeta } from "@/types/content";
 
 export const insights: InsightMeta[] = [
   {
+    sourceFile: "2026-10-22-wtu-academic-salon.md",
+    slug: "wtu-academic-salon-2026",
+    title: "Invited Talk at Wuhan Textile University’s 171st Academic Salon",
+    date: "2026-10-22",
+    displayDate: "22 Oct 2026",
+    category: "Academic exchange",
+    excerpt:
+      "An invited presentation on VO₂ thin films and smart-window coatings, sharing the programme with Professor Janez Kovač from Slovenia.",
+    image: "/assets/posts/wtu-academic-salon-2026/wtu-talk.jpg",
+    imageAlt: "Lu Hao presenting his invited talk on VO₂ thin-film structures at Wuhan Textile University",
+    showReferences: false,
+    references: [
+      {
+        citation: "Wuhan Textile University, School of Microelectronics, report on the 171st Academic Salon (23 October 2026).",
+        href: "https://sme.wtu.edu.cn/info/1441/10961.htm"
+      },
+      {
+        citation: "Wuhan Textile University, Office of International Affairs, report on visits by Slovenian, German and Russian academic colleagues (25 October 2026).",
+        href: "https://gjc.wtu.edu.cn/info/1021/10381.htm"
+      }
+    ]
+  },
+  {
     sourceFile: "2026-09-08-sino-german-academic-meeting-giessen.md",
     slug: "sino-german-academic-meeting-giessen",
     title: "A Sino-German Academic Meeting in Giessen",
