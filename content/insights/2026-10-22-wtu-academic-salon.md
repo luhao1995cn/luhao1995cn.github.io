@@ -4,7 +4,7 @@ title: |
   Invited Talk at Wuhan Textile University’s 171st Academic Salon
 ---
 
-On 22 October 2026, I was invited to speak at **Wuhan Textile University’s 171st Academic Salon**, organized by the School of Microelectronics. The salon focused on optoelectronic thin-film materials and surface characterization. I shared the programme with **Professor Janez Kovač** from the Jožef Stefan Institute, Slovenia, who also holds a professorship at the Jožef Stefan International Postgraduate School.
+On 22 October 2026, at the invitation of **Professor Yunbin He**, I gave a talk at **Wuhan Textile University’s 171st Academic Salon**, organized by the School of Microelectronics. The salon focused on optoelectronic thin-film materials and surface characterization. I shared the programme with **Professor Janez Kovač** from the Jožef Stefan Institute, Slovenia, who also holds a professorship at the Jožef Stefan International Postgraduate School.
 
 <figure style="margin: 32px 0;">
   <a href="/assets/posts/wtu-academic-salon-2026/wtu-talk.jpg" target="_blank"><img src="/assets/posts/wtu-academic-salon-2026/wtu-talk.jpg" alt="Lu Hao at the lectern presenting his VO₂ thin-film research, with the talk title projected behind him" width="1037" height="778" style="display: block; width: 100%; margin: 0;"></a>
