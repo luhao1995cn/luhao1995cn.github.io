@@ -12,7 +12,7 @@ export const siteConfig = {
   location: "Giessen, Germany",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://luhao1995cn.github.io",
   lastUpdated: "2026-07-20",
-  email: "hao.lu@uni-giessen.de",
+  email: "hao.lu.1995cn@gmail.com",
   profileImage: "/assets/site/profile-lu-hao.webp",
   profileImageAlt: "Portrait of Dr. Lu Hao"
 } as const;
